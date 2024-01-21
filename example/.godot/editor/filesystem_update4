@@ -1,8 +1,6 @@
 res://default_env.tres
-res://clownRoulette/scenes/main_menu.tscn
+res://clownRoulette/scenes/world_environment.tscn
 res://data/themes/button-theme.tres
-res://data/themes/panel-theme.tres
-res://src/examples/lobby.tscn
-res://src/examples/lobby-member.tscn
+res://clownRoulette/scenes/main_menu.tscn
 res://src/main.tscn
 res://src/components/sidebar-output.tscn
