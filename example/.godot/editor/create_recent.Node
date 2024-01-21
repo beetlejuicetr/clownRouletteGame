@@ -1,8 +1,11 @@
+AnimationPlayer
+CSGMesh3D
+MeshInstance3D
+Marker3D
+Node3D
 Node
 OmniLight3D
 Camera3D
 CameraViewpoint
-MeshInstance3D
 DirectionalLight3D
 WorldEnvironment
-Node3D

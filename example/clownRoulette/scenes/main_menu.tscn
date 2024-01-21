@@ -8,7 +8,7 @@ albedo_texture = ExtResource("1_snpch")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_brea3"]
-size = Vector2(10, 10)
+size = Vector2(30, 30)
 
 [node name="Node" type="Node"]
 
@@ -22,6 +22,7 @@ material_override = SubResource("StandardMaterial3D_pvrog")
 mesh = SubResource("PlaneMesh_brea3")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(0.904423, -0.055795, 0.422974, -0.104795, 0.931985, 0.347018, -0.413567, -0.358177, 0.837061, 0.999841, 4.09003, 5.42512)
+transform = Transform3D(0.0025406, 0.638066, -0.769977, 0, 0.76998, 0.638068, 0.999997, -0.00162107, 0.00195621, -6.74213, 2.11088, -0.0289381)
+fov = 60.0
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_q5wlt")]

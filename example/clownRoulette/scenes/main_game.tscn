@@ -1,0 +1,79 @@
+[gd_scene load_steps=16 format=3 uid="uid://dw0qt4rxorpa"]
+
+[ext_resource type="Texture2D" uid="uid://cqja8ss7im6l4" path="res://Textures/checker_red_512x512.png" id="1_hfor3"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/main_game.gd" id="1_p3dj2"]
+[ext_resource type="Texture2D" uid="uid://bq5irprlvsxoh" path="res://Textures/checker_lime_512x512.png" id="3_elfel"]
+[ext_resource type="Texture2D" uid="uid://b7jvhxwsyhm6w" path="res://Textures/checker_yellow_512x512.png" id="4_knq71"]
+[ext_resource type="Texture2D" uid="uid://doaw4j8r3er8v" path="res://Textures/checker_blue_512x512.png" id="5_p647x"]
+[ext_resource type="Texture2D" uid="uid://boxbrb3h8lwa6" path="res://Textures/checker_orange_512x512.png" id="6_7rrt7"]
+[ext_resource type="Texture2D" uid="uid://6p2b31y6vceq" path="res://Textures/checker_magenta_512x512.png" id="7_5s01i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5oer"]
+albedo_texture = ExtResource("1_hfor3")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6l13m"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjyga"]
+albedo_texture = ExtResource("3_elfel")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxy1a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ittgq"]
+albedo_texture = ExtResource("4_knq71")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4wve"]
+albedo_texture = ExtResource("5_p647x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tdjv"]
+albedo_texture = ExtResource("6_7rrt7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70txu"]
+albedo_texture = ExtResource("7_5s01i")
+
+[node name="Node" type="Node"]
+script = ExtResource("1_p3dj2")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="FLOOR" type="MeshInstance3D" parent="Node3D"]
+material_override = SubResource("StandardMaterial3D_e5oer")
+mesh = SubResource("PlaneMesh_6l13m")
+
+[node name="CHAIR" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+material_override = SubResource("StandardMaterial3D_qjyga")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="Marker3D" type="Marker3D" parent="Node3D/CHAIR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, 0)
+
+[node name="CHAIR2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material_override = SubResource("StandardMaterial3D_ittgq")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="Marker3D" type="Marker3D" parent="Node3D/CHAIR2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, 0)
+
+[node name="CHAIR3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+material_override = SubResource("StandardMaterial3D_p4wve")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="Marker3D" type="Marker3D" parent="Node3D/CHAIR3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, 0)
+
+[node name="CHAIR4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+material_override = SubResource("StandardMaterial3D_4tdjv")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="Marker3D" type="Marker3D" parent="Node3D/CHAIR4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, 0)
+
+[node name="TABLE" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258724, 0)
+material_override = SubResource("StandardMaterial3D_70txu")
+mesh = SubResource("BoxMesh_nxy1a")
