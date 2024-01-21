@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckieh4fb5rdej"]
+
+[ext_resource type="Texture2D" uid="uid://doaw4j8r3er8v" path="res://Textures/checker_blue_512x512.png" id="1_snpch"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvrog"]
+albedo_texture = ExtResource("1_snpch")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_brea3"]
+size = Vector2(10, 10)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_78tle"]
+
+[sub_resource type="Sky" id="Sky_87yhq"]
+sky_material = SubResource("PhysicalSkyMaterial_78tle")
+
+[sub_resource type="Environment" id="Environment_qoir2"]
+background_mode = 2
+sky = SubResource("Sky_87yhq")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_y_scale = 0
+volumetric_fog_density = 0.0815
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+
+[node name="Node" type="Node"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(0.415154, -0.721889, -0.553645, 0.696992, -0.138731, 0.703532, -0.584679, -0.67796, 0.445556, 0, 2.3059, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+material_override = SubResource("StandardMaterial3D_pvrog")
+mesh = SubResource("PlaneMesh_brea3")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(0.904423, -0.055795, 0.422974, -0.104795, 0.931985, 0.347018, -0.413567, -0.358177, 0.837061, 0.999841, 4.09003, 5.42512)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qoir2")

@@ -1,0 +1,228 @@
+[gd_scene load_steps=16 format=3 uid="uid://bj2ct0kxffelf"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bynwncm0p3kmb" path="res://data/fonts/main-titles.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://m480dfm4psbw" path="res://src/components/sidebar-output.tscn" id="4"]
+[ext_resource type="FontFile" path="res://data/fonts/button-text.tres" id="5"]
+[ext_resource type="FontFile" path="res://data/fonts/list-titles.tres" id="6"]
+[ext_resource type="Theme" uid="uid://68ace3qam0yu" path="res://data/themes/button-theme.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://g8iqnvyiyood" path="res://data/images/inverted-logo.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://doaw4j8r3er8v" path="res://Textures/checker_blue_512x512.png" id="8_bt4hy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_833t1"]
+bg_color = Color(0, 0, 0, 0.435294)
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieuqs"]
+albedo_texture = ExtResource("8_bt4hy")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p0v1b"]
+size = Vector2(10, 10)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_pty0o"]
+
+[sub_resource type="Sky" id="Sky_6psj8"]
+sky_material = SubResource("PhysicalSkyMaterial_pty0o")
+
+[sub_resource type="Environment" id="Environment_er43e"]
+background_mode = 2
+sky = SubResource("Sky_6psj8")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_y_scale = 0
+volumetric_fog_density = 0.0815
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+
+[node name="Node" type="Node"]
+
+[node name="Main" type="Panel" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_833t1")
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Frame" type="HBoxContainer" parent="Main"]
+custom_minimum_size = Vector2(1230, 670)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1255.0
+offset_bottom = 695.0
+theme_override_constants/separation = 25
+metadata/_edit_lock_ = true
+
+[node name="Main" type="VBoxContainer" parent="Main/Frame"]
+custom_minimum_size = Vector2(905, 670)
+layout_mode = 2
+theme_override_constants/separation = 25
+metadata/_edit_lock_ = true
+
+[node name="Topbar" type="HBoxContainer" parent="Main/Frame/Main"]
+layout_mode = 2
+theme_override_constants/separation = 25
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="TextureRect" parent="Main/Frame/Main/Topbar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Main/Frame/Main/Topbar"]
+custom_minimum_size = Vector2(533, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 35
+text = "Clown Roulette"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Message" type="RichTextLabel" parent="Main/Frame/Main"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "."
+scroll_active = false
+shortcut_keys_enabled = false
+text_direction = 1
+metadata/_edit_lock_ = true
+
+[node name="Sidebar" type="VBoxContainer" parent="Main/Frame"]
+custom_minimum_size = Vector2(300, 670)
+layout_mode = 2
+theme_override_constants/separation = 25
+metadata/_edit_lock_ = true
+
+[node name="Output" parent="Main/Frame/Sidebar" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Examples" type="Panel" parent="Main/Frame/Sidebar"]
+custom_minimum_size = Vector2(300, 505)
+layout_mode = 2
+theme_override_styles/panel = SubResource("3")
+metadata/_edit_lock_ = true
+
+[node name="List" type="VBoxContainer" parent="Main/Frame/Sidebar/Examples"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 285.0
+offset_bottom = 395.0
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6")
+text = "Available Examples"
+metadata/_edit_lock_ = true
+
+[node name="Authentication" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Authentication"
+metadata/_edit_lock_ = true
+
+[node name="Avatars" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = ExtResource("5")
+text = "Avatars"
+metadata/_edit_lock_ = true
+
+[node name="Inputs" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Inputs"
+metadata/_edit_lock_ = true
+
+[node name="Leaderboards" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Leaderboards"
+metadata/_edit_lock_ = true
+
+[node name="Lobby" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Lobby"
+metadata/_edit_lock_ = true
+
+[node name="StatsAchievements" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Stats and Achievements"
+metadata/_edit_lock_ = true
+
+[node name="Voice" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Voice"
+metadata/_edit_lock_ = true
+
+[node name="Spacer" type="Label" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6")
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="Button" parent="Main/Frame/Sidebar/Examples/List"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("7")
+theme_override_fonts/font = ExtResource("5")
+text = "Exit"
+metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(0.415154, -0.721889, -0.553645, 0.696992, -0.138731, 0.703532, -0.584679, -0.67796, 0.445556, 0, 2.3059, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+material_override = SubResource("StandardMaterial3D_ieuqs")
+mesh = SubResource("PlaneMesh_p0v1b")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(0.904423, -0.055795, 0.422974, -0.104795, 0.931985, 0.347018, -0.413567, -0.358177, 0.837061, 0.999841, 4.09003, 5.42512)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_er43e")
+
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Authentication" to="Main" method="_start_Example" binds= ["authentication"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Avatars" to="Main" method="_start_Example" binds= ["avatars"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Inputs" to="Main" method="_start_Example" binds= ["inputs"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Leaderboards" to="Main" method="_start_Example" binds= ["leaderboards"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Lobby" to="Main" method="_start_Example" binds= ["lobby"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/StatsAchievements" to="Main" method="_start_Example" binds= ["stats-achieves"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Voice" to="Main" method="_start_Example" binds= ["voice"]]
+[connection signal="pressed" from="Main/Frame/Sidebar/Examples/List/Exit" to="Main" method="_on_Exit_pressed"]
