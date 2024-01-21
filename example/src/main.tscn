@@ -41,6 +41,21 @@ func _process(delta):
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_najkw"]
 
+[sub_resource type="Animation" id="Animation_v54gl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGMesh3D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.731293, 0, -0.219911)]
+}
+
 [sub_resource type="Animation" id="Animation_rqbs4"]
 resource_name = "spin"
 length = 5.0
@@ -56,21 +71,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0.731293, 0, -0.219911), Vector3(0.731293, 6.28319, -0.219911)]
-}
-
-[sub_resource type="Animation" id="Animation_v54gl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CSGMesh3D2:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.731293, 0, -0.219911)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7gri"]
@@ -279,7 +279,7 @@ mesh = SubResource("BoxMesh_qran6")
 script = SubResource("GDScript_5vr2x")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="Node3D/CSGMesh3D"]
-transform = Transform3D(0.975917, 0.218143, 0, -0.162367, 0.726386, -0.667833, -0.145683, 0.651749, 0.744312, 0, 0, 0.00427115)
+transform = Transform3D(0.975917, 0.218143, 0, -0.162366, 0.726386, -0.667833, -0.145683, 0.651749, 0.744312, 0, 0, 0.00427115)
 operation = 2
 use_collision = true
 mesh = SubResource("CapsuleMesh_najkw")
