@@ -25,7 +25,6 @@ Loading="*res://src/loading.tscn"
 Wiring="*res://addons/Wiring/Wiring.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 CameraManager="*res://addons/DynamicCameraSystem/CameraManager.gd"
-TestCameraManager="*res://addons/test_camera_3d/test_camera_manager.gd"
 
 [display]
 

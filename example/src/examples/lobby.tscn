@@ -1,11 +1,109 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqo6cngvldt46"]
+[gd_scene load_steps=34 format=3 uid="uid://bqo6cngvldt46"]
 
 [ext_resource type="Script" path="res://src/examples/lobby.gd" id="1"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/main_game.gd" id="1_mv8cg"]
 [ext_resource type="Theme" uid="uid://68ace3qam0yu" path="res://data/themes/button-theme.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://c6d3jnq2a2x7n" path="res://clownRoulette/scenes/world_environment.tscn" id="2_v0ffy"]
 [ext_resource type="FontFile" path="res://data/fonts/list-titles.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://cqja8ss7im6l4" path="res://Textures/checker_red_512x512.png" id="3_efm4m"]
+[ext_resource type="Script" path="res://clownRoulette/scenes/GameScene.gd" id="3_x3u13"]
+[ext_resource type="Texture2D" uid="uid://bq5irprlvsxoh" path="res://Textures/checker_lime_512x512.png" id="4_76beh"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/Gun.gd" id="4_wlgm1"]
 [ext_resource type="FontFile" path="res://data/fonts/sub-titles.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://b7jvhxwsyhm6w" path="res://Textures/checker_yellow_512x512.png" id="5_jb2ax"]
 [ext_resource type="FontFile" path="res://data/fonts/output-text.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://doaw4j8r3er8v" path="res://Textures/checker_blue_512x512.png" id="6_ygg6a"]
 [ext_resource type="PackedScene" uid="uid://da10if42gew8v" path="res://src/components/main-frame.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://boxbrb3h8lwa6" path="res://Textures/checker_orange_512x512.png" id="7_dsahs"]
+[ext_resource type="Texture2D" uid="uid://6p2b31y6vceq" path="res://Textures/checker_magenta_512x512.png" id="8_1oq4u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ologl"]
+size = Vector3(1.17981, 0.286133, 1.05322)
+
+[sub_resource type="Animation" id="Animation_6ximb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.904903, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3mxug"]
+resource_name = "gun_hovered"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.904903, 0), Vector3(0, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7fk2"]
+_data = {
+"RESET": SubResource("Animation_6ximb"),
+"gun_hovered": SubResource("Animation_3mxug")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5oer"]
+albedo_texture = ExtResource("3_efm4m")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6l13m"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjyga"]
+albedo_texture = ExtResource("4_76beh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxy1a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ittgq"]
+albedo_texture = ExtResource("5_jb2ax")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4wve"]
+albedo_texture = ExtResource("6_ygg6a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tdjv"]
+albedo_texture = ExtResource("7_dsahs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70txu"]
+albedo_texture = ExtResource("8_1oq4u")
 
 [sub_resource type="StyleBoxFlat" id="1"]
 content_margin_left = 10.0
@@ -38,12 +136,96 @@ bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 [sub_resource type="StyleBoxFlat" id="5"]
 bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
-[node name="P2P" type="Panel"]
+[node name="MAIN_GAME" type="Node"]
+script = ExtResource("1_mv8cg")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_v0ffy")]
+
+[node name="GameScene" type="Node3D" parent="."]
+script = ExtResource("3_x3u13")
+
+[node name="Gun" type="Area3D" parent="GameScene"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.904903, 0)
+script = ExtResource("4_wlgm1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameScene/Gun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0899048, -0.356934, -0.0266113)
+shape = SubResource("BoxShape3D_ologl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="GameScene/Gun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106445, -0.363281, 0)
+size = Vector3(1.21289, 0.273438, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="GameScene/Gun/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235186, 0, 0.339009)
+operation = 2
+size = Vector3(1.00698, 1, 1.05371)
+
+[node name="GunAnimationPlayer" type="AnimationPlayer" parent="GameScene/Gun"]
+libraries = {
+"": SubResource("AnimationLibrary_d7fk2")
+}
+
+[node name="PLAYERS" type="Node3D" parent="GameScene"]
+
+[node name="PLAYERPOS" type="Node3D" parent="GameScene"]
+
+[node name="Marker3D" type="Marker3D" parent="GameScene/PLAYERPOS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, -2)
+
+[node name="Marker3D2" type="Marker3D" parent="GameScene/PLAYERPOS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830984, 2)
+
+[node name="Marker3D3" type="Marker3D" parent="GameScene/PLAYERPOS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.830984, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="GameScene/PLAYERPOS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.830984, 0)
+
+[node name="FLOOR" type="MeshInstance3D" parent="GameScene"]
+material_override = SubResource("StandardMaterial3D_e5oer")
+mesh = SubResource("PlaneMesh_6l13m")
+
+[node name="CHAIR" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+material_override = SubResource("StandardMaterial3D_qjyga")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="CHAIR2" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material_override = SubResource("StandardMaterial3D_ittgq")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="CHAIR3" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+material_override = SubResource("StandardMaterial3D_p4wve")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="CHAIR4" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+material_override = SubResource("StandardMaterial3D_4tdjv")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="TABLE" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258724, 0)
+material_override = SubResource("StandardMaterial3D_70txu")
+mesh = SubResource("BoxMesh_nxy1a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0987638, 2.17436, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameScene"]
+
+[node name="Camera3D" type="Camera3D" parent="GameScene"]
+transform = Transform3D(0.755877, -0.497509, 0.425598, 0, 0.650053, 0.759889, -0.654713, -0.574383, 0.49136, 1.53217, 5.40571, 3.74765)
+current = true
+
+[node name="P2P" type="Panel" parent="."]
 custom_minimum_size = Vector2(1280, 720)
 script = ExtResource("1")
 metadata/_edit_lock_ = true
 
-[node name="Frame" parent="." instance=ExtResource("7")]
+[node name="Frame" parent="P2P" instance=ExtResource("7")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -57,34 +239,34 @@ offset_bottom = 695.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Title" parent="Frame/Main/Topbar" index="1"]
+[node name="Title" parent="P2P/Frame/Main/Topbar" index="1"]
 theme = ExtResource("2")
 text = "Lobby Example"
 
-[node name="Message" type="RichTextLabel" parent="Frame/Main" index="1"]
+[node name="Message" type="RichTextLabel" parent="P2P/Frame/Main" index="1"]
 layout_mode = 2
 text = "This example will let you test various lobby functionality; as well as P2P packet functions."
 fit_content = true
 metadata/_edit_lock_ = true
 
-[node name="Displays" type="HBoxContainer" parent="Frame/Main" index="2"]
+[node name="Displays" type="HBoxContainer" parent="P2P/Frame/Main" index="2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 metadata/_edit_lock_ = true
 
-[node name="Outputs" type="VBoxContainer" parent="Frame/Main/Displays"]
+[node name="Outputs" type="VBoxContainer" parent="P2P/Frame/Main/Displays"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_lock_ = true
 
-[node name="Titles" type="HBoxContainer" parent="Frame/Main/Displays/Outputs"]
+[node name="Titles" type="HBoxContainer" parent="P2P/Frame/Main/Displays/Outputs"]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Output Title" type="Label" parent="Frame/Main/Displays/Outputs/Titles"]
+[node name="Output Title" type="Label" parent="P2P/Frame/Main/Displays/Outputs/Titles"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -92,7 +274,7 @@ theme_override_fonts/font = ExtResource("5")
 text = "Output Display"
 metadata/_edit_lock_ = true
 
-[node name="Lobby" type="Label" parent="Frame/Main/Displays/Outputs/Titles"]
+[node name="Lobby" type="Label" parent="P2P/Frame/Main/Displays/Outputs/Titles"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -100,7 +282,7 @@ theme_override_fonts/font = ExtResource("5")
 text = "Lobby ID: 0"
 metadata/_edit_lock_ = true
 
-[node name="Output" type="RichTextLabel" parent="Frame/Main/Displays/Outputs"]
+[node name="Output" type="RichTextLabel" parent="P2P/Frame/Main/Displays/Outputs"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -110,12 +292,12 @@ theme_override_styles/normal = SubResource("1")
 scroll_following = true
 metadata/_edit_lock_ = true
 
-[node name="PlayerList" type="VBoxContainer" parent="Frame/Main/Displays"]
+[node name="PlayerList" type="VBoxContainer" parent="P2P/Frame/Main/Displays"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Title" type="Label" parent="Frame/Main/Displays/PlayerList"]
+[node name="Title" type="Label" parent="P2P/Frame/Main/Displays/PlayerList"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -123,24 +305,24 @@ theme_override_fonts/font = ExtResource("5")
 text = "Player List (0)"
 metadata/_edit_lock_ = true
 
-[node name="Players" type="VBoxContainer" parent="Frame/Main/Displays/PlayerList"]
+[node name="Players" type="VBoxContainer" parent="P2P/Frame/Main/Displays/PlayerList"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_lock_ = true
 
-[node name="Chat Title" type="Label" parent="Frame/Main" index="3"]
+[node name="Chat Title" type="Label" parent="P2P/Frame/Main" index="3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5")
 text = "Chat"
 metadata/_edit_lock_ = true
 
-[node name="Messaging" type="HBoxContainer" parent="Frame/Main" index="4"]
+[node name="Messaging" type="HBoxContainer" parent="P2P/Frame/Main" index="4"]
 layout_mode = 2
 theme_override_constants/separation = 25
 metadata/_edit_lock_ = true
 
-[node name="Chat" type="LineEdit" parent="Frame/Main/Messaging"]
+[node name="Chat" type="LineEdit" parent="P2P/Frame/Main/Messaging"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -154,7 +336,7 @@ caret_blink = true
 caret_blink_interval = 0.5
 metadata/_edit_lock_ = true
 
-[node name="Send" type="Button" parent="Frame/Main/Messaging"]
+[node name="Send" type="Button" parent="P2P/Frame/Main/Messaging"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme = ExtResource("2")
@@ -162,69 +344,69 @@ disabled = true
 text = "Send Message"
 metadata/_edit_lock_ = true
 
-[node name="List" parent="Frame/Sidebar/Options" index="0"]
+[node name="List" parent="P2P/Frame/Sidebar/Options" index="0"]
 offset_right = 285.0
 offset_bottom = 480.0
 
-[node name="Title" parent="Frame/Sidebar/Options/List" index="0"]
+[node name="Title" parent="P2P/Frame/Sidebar/Options/List" index="0"]
 text = "Lobby Functions"
 
-[node name="CreateLobby" type="Button" parent="Frame/Sidebar/Options/List" index="1"]
+[node name="CreateLobby" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="1"]
 layout_mode = 2
 theme = ExtResource("2")
 text = "Create Lobby"
 metadata/_edit_lock_ = true
 
-[node name="OpenLobby List" type="Button" parent="Frame/Sidebar/Options/List" index="2"]
+[node name="OpenLobby List" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="2"]
 layout_mode = 2
 theme = ExtResource("2")
 text = "Open Lobby List"
 metadata/_edit_lock_ = true
 
-[node name="GetLobbyData" type="Button" parent="Frame/Sidebar/Options/List" index="3"]
+[node name="GetLobbyData" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="3"]
 layout_mode = 2
 theme = ExtResource("2")
 disabled = true
 text = "Get Lobby Data"
 metadata/_edit_lock_ = true
 
-[node name="Leave" type="Button" parent="Frame/Sidebar/Options/List" index="4"]
+[node name="Leave" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="4"]
 layout_mode = 2
 theme = ExtResource("2")
 disabled = true
 text = "Leave Lobby"
 metadata/_edit_lock_ = true
 
-[node name="Spacer1" type="Label" parent="Frame/Sidebar/Options/List" index="5"]
+[node name="Spacer1" type="Label" parent="P2P/Frame/Sidebar/Options/List" index="5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
 metadata/_edit_lock_ = true
 
-[node name="P2P Title" type="Label" parent="Frame/Sidebar/Options/List" index="6"]
+[node name="P2P Title" type="Label" parent="P2P/Frame/Sidebar/Options/List" index="6"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
 text = "P2P Functions"
 metadata/_edit_lock_ = true
 
-[node name="SendPacket" type="Button" parent="Frame/Sidebar/Options/List" index="7"]
+[node name="SendPacket" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="7"]
 layout_mode = 2
 theme = ExtResource("2")
 disabled = true
 text = "Send Test Packet"
 metadata/_edit_lock_ = true
 
-[node name="Spacer2" type="Label" parent="Frame/Sidebar/Options/List" index="8"]
+[node name="Spacer2" type="Label" parent="P2P/Frame/Sidebar/Options/List" index="8"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
 metadata/_edit_lock_ = true
 
-[node name="Back" type="Button" parent="Frame/Sidebar/Options/List" index="9"]
+[node name="Back" type="Button" parent="P2P/Frame/Sidebar/Options/List" index="9"]
 layout_mode = 2
 theme = ExtResource("2")
 text = "Back To Main Menu"
 metadata/_edit_lock_ = true
 
-[node name="Lobbies" type="Panel" parent="."]
+[node name="Lobbies" type="Panel" parent="P2P"]
 visible = false
 layout_mode = 0
 offset_left = 25.0
@@ -234,7 +416,7 @@ offset_bottom = 638.0
 theme_override_styles/panel = SubResource("5")
 metadata/_edit_lock_ = true
 
-[node name="Title" type="Label" parent="Lobbies"]
+[node name="Title" type="Label" parent="P2P/Lobbies"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
@@ -244,7 +426,7 @@ theme_override_fonts/font = ExtResource("5")
 text = "Lobby List"
 metadata/_edit_lock_ = true
 
-[node name="Scroll" type="ScrollContainer" parent="Lobbies"]
+[node name="Scroll" type="ScrollContainer" parent="P2P/Lobbies"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 50.0
@@ -252,13 +434,13 @@ offset_right = 860.0
 offset_bottom = 440.0
 metadata/_edit_lock_ = true
 
-[node name="List" type="VBoxContainer" parent="Lobbies/Scroll"]
+[node name="List" type="VBoxContainer" parent="P2P/Lobbies/Scroll"]
 custom_minimum_size = Vector2(825, 390)
 layout_mode = 2
 theme_override_constants/separation = 10
 metadata/_edit_lock_ = true
 
-[node name="Close Lobbies" type="Button" parent="Lobbies"]
+[node name="Close Lobbies" type="Button" parent="P2P/Lobbies"]
 layout_mode = 0
 offset_left = 660.0
 offset_top = 455.0
@@ -268,7 +450,7 @@ theme = ExtResource("2")
 text = "Close Lobby List"
 metadata/_edit_lock_ = true
 
-[node name="Refresh" type="Button" parent="Lobbies"]
+[node name="Refresh" type="Button" parent="P2P/Lobbies"]
 layout_mode = 0
 offset_left = 434.903
 offset_top = 455.289
@@ -279,14 +461,16 @@ disabled = true
 text = "Refresh"
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Frame/Main/Messaging/Send" to="." method="_on_Send_Chat_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/CreateLobby" to="." method="_on_Create_Lobby_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/OpenLobby List" to="." method="_on_Open_Lobby_List_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/GetLobbyData" to="." method="_on_Get_Lobby_Data_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/Leave" to="." method="_on_Leave_Lobby_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/SendPacket" to="." method="_on_Send_Packet_pressed"]
-[connection signal="pressed" from="Frame/Sidebar/Options/List/Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="Lobbies/Close Lobbies" to="." method="_on_Close_Lobbies_pressed"]
-[connection signal="pressed" from="Lobbies/Refresh" to="." method="_on_Refresh_pressed"]
+[connection signal="mouse_entered" from="GameScene/Gun" to="GameScene/Gun" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameScene/Gun" to="GameScene/Gun" method="_on_mouse_exited"]
+[connection signal="pressed" from="P2P/Frame/Main/Messaging/Send" to="P2P" method="_on_Send_Chat_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/CreateLobby" to="P2P" method="_on_Create_Lobby_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/OpenLobby List" to="P2P" method="_on_Open_Lobby_List_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/GetLobbyData" to="P2P" method="_on_Get_Lobby_Data_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/Leave" to="P2P" method="_on_Leave_Lobby_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/SendPacket" to="P2P" method="_on_Send_Packet_pressed"]
+[connection signal="pressed" from="P2P/Frame/Sidebar/Options/List/Back" to="P2P" method="_on_Back_pressed"]
+[connection signal="pressed" from="P2P/Lobbies/Close Lobbies" to="P2P" method="_on_Close_Lobbies_pressed"]
+[connection signal="pressed" from="P2P/Lobbies/Refresh" to="P2P" method="_on_Refresh_pressed"]
 
-[editable path="Frame"]
+[editable path="P2P/Frame"]

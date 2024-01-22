@@ -10,9 +10,10 @@ var DATA
 var LOBBY_VOTE_KICK: bool = false
 var LOBBY_MAX_MEMBERS: int = 10
 enum LOBBY_AVAILABILITY {PRIVATE, FRIENDS, PUBLIC, INVISIBLE}
-
+enum ACTIONS {EMOTE, FIRE, SPECIAL}
 
 func _ready() -> void:
+	print(LOBBY_AVAILABILITY.FRIENDS,"AAAAAAAAAAAAAAAAAA")
 	_connect_Steam_Signals("lobby_created", "_on_Lobby_Created")
 	_connect_Steam_Signals("lobby_match_list", "_on_Lobby_Match_List")
 	_connect_Steam_Signals("lobby_joined", "_on_Lobby_Joined")
@@ -54,6 +55,7 @@ func _join_Lobby(lobby_id: int) -> void:
 	LOBBY_MEMBERS.clear()
 	# Make the lobby join request to Steam
 	Steam.joinLobby(lobby_id)
+	
 
 
 # When the player leaves a lobby for whatever reason
@@ -73,7 +75,10 @@ func _leave_Lobby() -> void:
 			var SESSION_CLOSED: bool = Steam.closeP2PSessionWithUser(MEMBERS['steam_id'])
 			print("[STEAM] P2P session closed with "+str(MEMBERS['steam_id'])+": "+str(SESSION_CLOSED))
 		# Clear the local lobby list
+		Wiring.GameScene._clear_3d_player_models(LOBBY_MEMBERS)
+		#$#
 		LOBBY_MEMBERS.clear()
+		
 		for MEMBER in $Frame/Main/Displays/PlayerList/Players.get_children():
 			MEMBER.hide()
 			MEMBER.queue_free()
@@ -138,6 +143,8 @@ func _on_Lobby_Joined(lobby_id: int, _permissions: int, _locked: bool, response:
 		_change_Button_Controls(false)
 		# Make the initial handshake
 		_make_P2P_Handshake()
+		
+		Wiring.GameScene._create_3d_player_models(LOBBY_MEMBERS)
 	# Else it failed for some reason
 	else:
 		# Get the failure reason
@@ -218,7 +225,7 @@ func _on_P2P_Session_Connect_Fail(lobby_id: int, session_error: int) -> void:
 # Send test packet information
 func _send_Test_Info() -> void:
 	$Frame/Main/Displays/Outputs/Output.append_text("[STEAM] Sending test packet data...\n")
-	var TEST_DATA: Dictionary = {"title":"This is a test packet", "player_id":Global.STEAM_ID, "player_hp":"31", "PLAYERDICK_CM":"21CM"}
+	var TEST_DATA: Dictionary = {"action":"a", "player_id":Global.STEAM_ID, "player_hp":"31", "PLAYERDICK_CM":"21CM"}
 	_send_P2P_Packet(0, TEST_DATA)
 
 

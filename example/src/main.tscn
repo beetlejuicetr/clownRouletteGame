@@ -30,7 +30,8 @@ script/source = "extends CSGMesh3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play(\"spin\")
+	Wiring.AnimationPlayer.play(\"spin\")
+	
 	pass # Replace with function body.
 
 

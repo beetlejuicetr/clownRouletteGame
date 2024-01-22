@@ -8,7 +8,7 @@ var IS_ONLINE: bool = false
 var IS_OWNED: bool = false
 var STEAM_ID: int = 0
 var STEAM_USERNAME: String = "No one"
-var APP_ID: String = "518790" # setup 480 for testing.
+var APP_ID: String = "480" # setup 480 for testing.
 
 func _ready() -> void:
 	OS.set_environment("SteamAppId", APP_ID)
