@@ -539,6 +539,7 @@ mouse_filter = 2
 
 [node name="bloodSplash" parent="Node3D" instance=ExtResource("2_dsa42")]
 transform = Transform3D(-0.0140495, 0, -0.999901, 0, 1, 0, 0.999901, 0, -0.0140495, -0.985427, 2.27194, -0.39994)
+visible = false
 
 [node name="cardPlaceHolderPlayer" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618192, 1.47791, 1.4227)
@@ -722,6 +723,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.347966
 
 [node name="Camera3D" type="Camera3D" parent="Node3D/PLAYER"]
 transform = Transform3D(0.999162, 0.0157975, -0.0377569, 0, 0.922508, 0.385978, 0.0409285, -0.385655, 0.921735, 0.167635, 0.70704, -0.0495701)
+current = true
 
 [node name="HAND" type="Node3D" parent="Node3D/PLAYER"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538217, -0.628031)
@@ -746,7 +748,7 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1on6k")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="Node3D/cardDeck"]
+[node name="Area3D" type="Area3D" parent="Node3D/cardDeck" groups=["DECK"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/cardDeck/Area3D"]
 shape = SubResource("BoxShape3D_1naoy")

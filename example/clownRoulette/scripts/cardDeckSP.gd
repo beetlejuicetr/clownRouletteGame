@@ -1,5 +1,9 @@
 extends Node3D
 
+enum CARDS {LOOK_GUN,SPIN_GUN,X2SHOOT,ROUND_PASS,STEAL_CARD,PROTECTION}
+
+
+
 var isHovered = false
 @onready var cardScene = preload("res://clownRoulette/scenes/card.tscn")
 @onready var playerDesk = Wiring.cardPlaceHolderPlayer

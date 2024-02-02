@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://buv2of2nk54bh"]
+
+[ext_resource type="Texture2D" uid="uid://c2gjmh7jwhl3f" path="res://clownRoulette/assets/clown/textures/eye.png" id="1_su0ji"]
+
+[resource]
+resource_name = "eyes"
+cull_mode = 2
+albedo_texture = ExtResource("1_su0ji")
+roughness = 0.5
