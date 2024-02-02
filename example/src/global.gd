@@ -4,6 +4,8 @@ extends Node
 #################################################
 var SPgunTurn = true
 var SPcardTurn = true
+var SPgunHandled = false
+enum  SP_GROUPS {ENEMY,REVOLVER,PLAYER,CARDDECK}
 
 enum CARD_TYPES {SPIN, LOOK, X2SHOOT, SHOOTSELF, ROUNDPASS, STEALCARD, AGAIN}
 

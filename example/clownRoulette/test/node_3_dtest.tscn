@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv7jllioyduvu"]
+[gd_scene load_steps=20 format=3 uid="uid://cv7jllioyduvu"]
 
 [ext_resource type="Texture2D" uid="uid://dvgc60ydpm1qy" path="res://clownRoulette/assets/blood/PNG/Default (256px)/splat12.png" id="1_3672n"]
 [ext_resource type="PackedScene" uid="uid://d3h70degayfeu" path="res://clownRoulette/scenes/blood_splash.tscn" id="1_dwgrx"]
 [ext_resource type="Texture2D" uid="uid://7cywshyvan3c" path="res://clownRoulette/assets/blood/PNG/Default (256px)/splat19.png" id="2_ks13f"]
 [ext_resource type="PackedScene" uid="uid://dpbdsfyqre6qg" path="res://clownRoulette/scenes/bullet_hole.tscn" id="4_03187"]
+[ext_resource type="PackedScene" uid="uid://c2fauf8w3ksdx" path="res://clownRoulette/scenes/xenon_camera_3d.tscn" id="5_1t27t"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4cwxi"]
 size = Vector2(20, 20)
@@ -84,9 +85,6 @@ mesh = SubResource("PlaneMesh_4cwxi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5cub5")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.832901, 0.341846, -0.435222, 0, 0.786418, 0.617694, 0.553422, -0.514478, 0.655008, -2.80937, 2.56707, 5.91322)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.902615, 0.430448, 0, -0.430448, 0.902615, 0, 0, 0)
 
@@ -122,3 +120,5 @@ size = Vector3(2.92102, 2.88196, 1)
 
 [node name="CSGMesh3D" parent="CSGBox3D" instance=ExtResource("4_03187")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.478425, 0.00594127, -0.182048)
+
+[node name="XenonCamera3D" parent="." instance=ExtResource("5_1t27t")]

@@ -82,6 +82,7 @@ func _show_Quit_Confirm() -> void:
 
 func _on_Resume_pressed() -> void:
 	$Animator.play("Quit Hide")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_Quit_pressed() -> void:
@@ -108,7 +109,10 @@ func _on_Animator_Finished(this_animation: String) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() and !event.is_echo():
 		if event.is_action("ui_cancel"):
+			
 			if IS_QUIT_OPEN:
 				_on_Resume_pressed()
+				
 			else:
 				_show_Quit_Confirm()
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
