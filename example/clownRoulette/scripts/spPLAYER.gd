@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var cam = $Camera3D
-
+@onready var bulletHole = preload("res://clownRoulette/scenes/bullet_hole.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -31,4 +31,22 @@ func _create_ray():
 		var x = raycastResult["collider"]
 		
 		print(x.get_groups())
+		
+		_search_action(x,x.get_groups(),raycastResult["position"])
+	pass
+
+func _search_action(to,group,position):
+	for i in group:
+		print(i,group)
+		#if group[i] == Global.SP_GROUPS.ENEMY:
+		#	_shoot(to,position)
+	pass
+
+func _shoot(to,position):
+	if Global.SPgunTurn and Global.SPgunHandled:
+		## to.deathAnim()
+		var bulletHoleIns = bulletHole.instantiate()
+		## find mesh for create
+		add_child(bulletHoleIns)
+		pass
 	pass
