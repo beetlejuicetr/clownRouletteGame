@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bixs0xgxq6h31"]
+
+[ext_resource type="Texture2D" uid="uid://ikn8mbl1sj77" path="res://clownRoulette/assets/revolver/textures/Wood066_1K-PNG_Color.png" id="1_kqkf7"]
+[ext_resource type="Texture2D" uid="uid://bhxqttj0lf1th" path="res://clownRoulette/assets/revolver/textures/Wood066_1K-PNG_Roughness.png" id="2_m83xg"]
+[ext_resource type="Texture2D" uid="uid://umu77qwefk86" path="res://clownRoulette/assets/revolver/textures/Wood066_1K-PNG_NormalGL.png" id="3_wiv6j"]
+
+[resource]
+resource_name = "revbod.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_kqkf7")
+metallic = 1.0
+metallic_texture = ExtResource("2_m83xg")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_m83xg")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_wiv6j")

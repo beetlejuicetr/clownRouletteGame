@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dn04ft5rb30lm"]
+
+[ext_resource type="Texture2D" uid="uid://dvegtjuyymy0k" path="res://clownRoulette/assets/clown/textures/teeth.png" id="1_d1xyu"]
+
+[resource]
+resource_name = "teeth"
+cull_mode = 2
+albedo_texture = ExtResource("1_d1xyu")
+roughness = 0.5

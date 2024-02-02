@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d6df1s8gwoxk"]
+
+[resource]
+resource_name = "chair"
+cull_mode = 2
+metallic = 1.0

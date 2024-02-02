@@ -1,8 +1,10 @@
 extends Node3D
 
 @onready var cam = $Camera3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -25,5 +27,8 @@ func _create_ray():
 	ray_query.to = to
 	var raycastResult = space.intersect_ray(ray_query)
 	if !raycastResult.is_empty():
-		print(raycastResult)
+		print("result:", raycastResult)
+		var x = raycastResult["collider"]
+		
+		print(x.get_groups())
 	pass

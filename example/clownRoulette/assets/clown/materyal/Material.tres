@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b06cpbwgdyqt8"]
+
+[ext_resource type="Texture2D" uid="uid://dpm6gfdhuo24c" path="res://clownRoulette/assets/clown/textures/Clownbody.png" id="1_0mcxi"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_0mcxi")
+roughness = 0.636364
