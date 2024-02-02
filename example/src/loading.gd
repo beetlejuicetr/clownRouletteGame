@@ -38,9 +38,14 @@ func _deferred_Load_Scene(path: String) -> void:
 	if path == "main":
 		IS_IN_MAIN = true
 		SCENE_PATH = "res://src/main.tscn"
+	elif path == "singleplayer":
+		IS_IN_MAIN = true
+		SCENE_PATH = "res://clownRoulette/scenes/singleplayer.tscn"
+		pass
 	else:
 		IS_IN_MAIN = false
 		SCENE_PATH = "res://src/examples/"+str(path)+".tscn"
+		
 	ResourceLoader.load_threaded_request(SCENE_PATH)
 	print("Starting preload animation")
 	$Animator.play("Preload")

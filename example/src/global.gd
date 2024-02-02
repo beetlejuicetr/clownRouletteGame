@@ -1,6 +1,20 @@
 extends Node
 #################################################
-# GODOTSTEAM EXAMPLE PROJECT v3.0
+# GODOT SINGLEPLAYER VARIABLES
+#################################################
+var SPgunTurn = true
+var SPcardTurn = true
+
+enum CARD_TYPES {SPIN, LOOK, X2SHOOT, SHOOTSELF, ROUNDPASS, STEALCARD, AGAIN}
+
+
+
+
+
+
+
+#################################################
+# GODOT STEAM VARIABLES
 #################################################
 var IS_ON_STEAM: bool = false
 var IS_ON_STEAM_DECK: bool = false
@@ -9,7 +23,11 @@ var IS_OWNED: bool = false
 var STEAM_ID: int = 0
 var STEAM_USERNAME: String = "No one"
 var APP_ID: String = "480" # setup 480 for testing.
+var CURRENT_LOBBY_ID : int = 0
 
+
+enum ACTIONS {PING, DATA, RETURN, EMOTE, FIRE, SPECIAL, TURN}
+enum TYPES {GUN, CHARACTER, TABLE, SCENE}
 func _ready() -> void:
 	OS.set_environment("SteamAppId", APP_ID)
 	OS.set_environment("SteamGameId", APP_ID)
@@ -49,3 +67,11 @@ func _initialize_Steam() -> void:
 func _process(_delta: float) -> void:
 	if IS_ON_STEAM:
 		Steam.run_callbacks()
+
+
+func _is_lobby_owner_me():
+	if Global.STEAM_ID == Steam.getLobbyOwner(CURRENT_LOBBY_ID):
+		return true
+	else:
+		return false
+	pass

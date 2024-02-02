@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3h70degayfeu"]
+
+[ext_resource type="Texture2D" uid="uid://dvgc60ydpm1qy" path="res://clownRoulette/assets/blood/PNG/Default (256px)/splat12.png" id="1_8wjpk"]
+[ext_resource type="Texture2D" uid="uid://7cywshyvan3c" path="res://clownRoulette/assets/blood/PNG/Default (256px)/splat19.png" id="2_crrb1"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_x17wq"]
+
+[sub_resource type="Curve" id="Curve_l3uv1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.56309), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ocm5b"]
+curve = SubResource("Curve_l3uv1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3hawc"]
+angle_max = 180.0
+angular_velocity_max = 50.0
+directional_velocity_min = 1.0
+directional_velocity_max = 3.0
+directional_velocity_curve = SubResource("CurveXYZTexture_x17wq")
+radial_velocity_max = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_ocm5b")
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qc7kl"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_8wjpk")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_6nfvo"]
+material = SubResource("StandardMaterial3D_qc7kl")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="Skin" id="Skin_kxr7v"]
+
+[sub_resource type="Curve" id="Curve_gdtmg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.640719, 0.532429), -1.17035, -1.17035, 0, 0, Vector2(1, 0), -2.37728, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6x71x"]
+curve = SubResource("Curve_gdtmg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2y88y"]
+angle_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_6x71x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlh17"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("2_crrb1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bjvw2"]
+material = SubResource("StandardMaterial3D_nlh17")
+size = Vector2(0.8, 0.8)
+orientation = 1
+
+[node name="bloodSplash" type="Node3D"]
+
+[node name="bloodCollision" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498413, -1.59864, 0.918213)
+size = Vector3(6.63501, 2, 3.83643)
+
+[node name="blood" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32565, 0.61499, 0.756018)
+amount = 10
+sub_emitter = NodePath("../bloodPool")
+process_material = SubResource("ParticleProcessMaterial_3hawc")
+draw_pass_1 = SubResource("QuadMesh_6nfvo")
+draw_skin = SubResource("Skin_kxr7v")
+
+[node name="bloodPool" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.194019, 0)
+amount = 100
+lifetime = 1.6
+visibility_aabb = AABB(-3.68408, -4, -4, 8, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_2y88y")
+draw_pass_1 = SubResource("QuadMesh_bjvw2")

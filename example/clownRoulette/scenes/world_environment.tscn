@@ -15,8 +15,10 @@ ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
+sdfgi_read_sky_light = false
 sdfgi_y_scale = 0
-volumetric_fog_density = 0.0815
+glow_enabled = true
+volumetric_fog_density = 0.2106
 volumetric_fog_temporal_reprojection_enabled = false
 adjustment_enabled = true
 

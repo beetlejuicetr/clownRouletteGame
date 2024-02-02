@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmxf76sbhme0j"]
+
+[ext_resource type="Texture2D" uid="uid://cbkltkfbjtkw" path="res://clownRoulette/assets/deck/kart_texture.png" id="1_5hmci"]
+[ext_resource type="Texture2D" uid="uid://sfitvcnf1hed" path="res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png" id="2_6yxb4"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/card.gd" id="2_o0j1l"]
+[ext_resource type="Texture2D" uid="uid://4ivwc08wy7ut" path="res://clownRoulette/assets/deck/icons/spin.png" id="4_et0fo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lu8h"]
+albedo_texture = ExtResource("1_5hmci")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_61nmn"]
+size = Vector2(2, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ei2q"]
+cull_mode = 1
+albedo_texture = ExtResource("2_6yxb4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s6o8n"]
+material = SubResource("StandardMaterial3D_0ei2q")
+size = Vector2(2, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lto2w"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_et0fo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3ih7y"]
+material = SubResource("StandardMaterial3D_lto2w")
+size = Vector2(1.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixiuc"]
+size = Vector3(1.78418, 0.019043, 2.40366)
+
+[node name="CARD0" type="MeshInstance3D"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4lu8h")
+mesh = SubResource("PlaneMesh_61nmn")
+script = ExtResource("2_o0j1l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_s6o8n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.506814)
+mesh = SubResource("PlaneMesh_3ih7y")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.999944, -4.63839e-10, 0.0106114, -0.0106114, -4.37089e-08, 0.999944, 0, -1, -4.37114e-08, 0, 0.01, 0.413144)
+text = "SPIN"
+font_size = 96
+
+[node name="CardArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82164e-09, 0.0322758, 0)
+shape = SubResource("BoxShape3D_ixiuc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="CardArea" to="." method="_on_card_area_mouse_entered"]
+[connection signal="mouse_exited" from="CardArea" to="." method="_on_card_area_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

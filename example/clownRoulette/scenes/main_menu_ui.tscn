@@ -1,0 +1,191 @@
+[gd_scene load_steps=12 format=3 uid="uid://bs6orcgdt6bix"]
+
+[ext_resource type="FontFile" uid="uid://vssw6eixyfaf" path="res://clownRoulette/assets/FONTS/creepy-blood/Creepy Blood.ttf" id="1_omjcr"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/main_menu_ui.gd" id="2_6qeos"]
+
+[sub_resource type="Theme" id="Theme_4ekdt"]
+default_font = ExtResource("1_omjcr")
+default_font_size = 48
+
+[sub_resource type="Gradient" id="Gradient_mks74"]
+colors = PackedColorArray(0.466667, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rt1ch"]
+gradient = SubResource("Gradient_mks74")
+
+[sub_resource type="Gradient" id="Gradient_0amlq"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qg6no"]
+gradient = SubResource("Gradient_0amlq")
+
+[sub_resource type="Gradient" id="Gradient_mifbw"]
+colors = PackedColorArray(0.782689, 0.729974, 0.241887, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q8m5r"]
+gradient = SubResource("Gradient_mifbw")
+
+[sub_resource type="Gradient" id="Gradient_b4yag"]
+colors = PackedColorArray(0.255522, 3.71509e-07, 6.01634e-08, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8six3"]
+gradient = SubResource("Gradient_b4yag")
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4ekdt")
+script = ExtResource("2_6qeos")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.345098)
+
+[node name="HEADER2" type="Label" parent="."]
+layout_mode = 1
+offset_right = 385.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 65
+text = "clown roulette"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -229.0
+offset_right = 382.0
+offset_bottom = 229.0
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayOnline" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 65)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture1D_rt1ch")
+texture_pressed = SubResource("GradientTexture1D_qg6no")
+texture_hover = SubResource("GradientTexture1D_q8m5r")
+texture_disabled = SubResource("GradientTexture1D_8six3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayOnline"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.5
+offset_right = 20.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Online"
+
+[node name="PlayOffline" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 65)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture1D_rt1ch")
+texture_pressed = SubResource("GradientTexture1D_qg6no")
+texture_hover = SubResource("GradientTexture1D_q8m5r")
+texture_disabled = SubResource("GradientTexture1D_8six3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayOffline"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.5
+offset_right = 20.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Singleplayer"
+
+[node name="Settings" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 65)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture1D_rt1ch")
+texture_pressed = SubResource("GradientTexture1D_qg6no")
+texture_hover = SubResource("GradientTexture1D_q8m5r")
+texture_disabled = SubResource("GradientTexture1D_8six3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.5
+offset_right = 20.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="Exit" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 65)
+layout_mode = 2
+disabled = true
+texture_normal = SubResource("GradientTexture1D_rt1ch")
+texture_pressed = SubResource("GradientTexture1D_qg6no")
+texture_hover = SubResource("GradientTexture1D_q8m5r")
+texture_disabled = SubResource("GradientTexture1D_8six3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.5
+offset_right = 20.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.380392, 0.380392, 0.380392, 1)
+text = "NO EXIT"
+
+[node name="isOnline" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 1, 0, 0.392157)
+
+[connection signal="pressed" from="VBoxContainer/PlayOnline" to="." method="_on_play_online_pressed" binds= ["lobby"]]
+[connection signal="pressed" from="VBoxContainer/PlayOffline" to="." method="_on_play_offline_pressed" binds= ["singleplayer"]]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

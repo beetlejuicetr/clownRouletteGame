@@ -1,0 +1,79 @@
+[gd_resource type="VisualShader" load_steps=10 format=3 uid="uid://dxqwtxwwhv65q"]
+
+[ext_resource type="Texture2D" uid="uid://dohfs5ym18wal" path="res://clownRoulette/assets/shader/burn/burn.png" id="1_2bydm"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_7i3i7"]
+output_port_for_preview = 0
+texture = ExtResource("1_2bydm")
+
+[sub_resource type="Gradient" id="Gradient_cyyjr"]
+offsets = PackedFloat32Array(0.235135, 0.505405, 0.937838, 1)
+colors = PackedColorArray(7.70092e-07, 0.637892, 0.373391, 1, 0.688579, 0.408219, 1, 1, 0.970085, 0.0190823, 0.981255, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_66bg1"]
+gradient = SubResource("Gradient_cyyjr")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fa25o"]
+texture = SubResource("GradientTexture2D_66bg1")
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_7b3du"]
+output_port_for_preview = 0
+function = 1
+
+[sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_w3qn1"]
+parameter_name = "Vector2Parameter"
+default_value_enabled = true
+default_value = Vector2(2, 2)
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_1bqsc"]
+parameter_name = "Texture2DParameter"
+texture_source = 1
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_jfjpy"]
+output_port_for_preview = 0
+default_input_values = [0, Vector3(0.5, 1, 1), 1, Vector3(0, 0, 0)]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_3;
+uniform sampler2D Texture2DParameter : hint_screen_texture;
+uniform sampler2D tex_frg_2;
+
+
+
+void fragment() {
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, UV);
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// ColorOp:9
+	vec3 n_in9p0 = vec3(0.50000, 1.00000, 1.00000);
+	vec3 n_out9p0 = vec3(1.0) - (vec3(1.0) - n_in9p0) * (vec3(1.0) - vec3(n_out2p0.xyz));
+
+
+// Output:0
+	ALBEDO = vec3(n_out3p0.xyz);
+	ALPHA = n_out9p0.x;
+
+
+}
+"
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_7i3i7")
+nodes/fragment/2/position = Vector2(-80, 480)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_fa25o")
+nodes/fragment/3/position = Vector2(-60, 80)
+nodes/fragment/5/node = SubResource("VisualShaderNodeUVFunc_7b3du")
+nodes/fragment/5/position = Vector2(-320, 340)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVec2Parameter_w3qn1")
+nodes/fragment/6/position = Vector2(-720, 380)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture2DParameter_1bqsc")
+nodes/fragment/7/position = Vector2(-500, 680)
+nodes/fragment/9/node = SubResource("VisualShaderNodeColorOp_jfjpy")
+nodes/fragment/9/position = Vector2(180, 420)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 6, 0, 5, 1, 7, 0, 2, 2, 2, 0, 9, 1, 9, 0, 0, 1)

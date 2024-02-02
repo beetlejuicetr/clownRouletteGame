@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3c0jxxu53rx3"]
+
+[ext_resource type="PackedScene" uid="uid://ukqrcqm7q480" path="res://clownRoulette/assets/sahne/sahne.blend" id="1_t7tag"]
+
+[node name="sahne" instance=ExtResource("1_t7tag")]

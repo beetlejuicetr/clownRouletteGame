@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcpjbrelfns5a"]
+
+[ext_resource type="Texture2D" uid="uid://d0ssu2picsd0r" path="res://clownRoulette/assets/deck/kart_placeholder.png" id="1_8nty7"]
+
+[node name="cardHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 506.25
+offset_bottom = 720.0
+texture = ExtResource("1_8nty7")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 549.0
+offset_right = 1055.25
+offset_bottom = 720.0
+texture = ExtResource("1_8nty7")
+expand_mode = 3

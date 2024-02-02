@@ -8,12 +8,11 @@ var LOBBY_ID: int = 0
 var LOBBY_MEMBERS: Array = []
 var DATA
 var LOBBY_VOTE_KICK: bool = false
-var LOBBY_MAX_MEMBERS: int = 10
+var LOBBY_MAX_MEMBERS: int = 4
 enum LOBBY_AVAILABILITY {PRIVATE, FRIENDS, PUBLIC, INVISIBLE}
-enum ACTIONS {EMOTE, FIRE, SPECIAL}
+
 
 func _ready() -> void:
-	print(LOBBY_AVAILABILITY.FRIENDS,"AAAAAAAAAAAAAAAAAA")
 	_connect_Steam_Signals("lobby_created", "_on_Lobby_Created")
 	_connect_Steam_Signals("lobby_match_list", "_on_Lobby_Match_List")
 	_connect_Steam_Signals("lobby_joined", "_on_Lobby_Joined")
@@ -44,6 +43,7 @@ func _create_Lobby() -> void:
 	if LOBBY_ID == 0:
 		# Set the lobby to public with ten members max
 		Steam.createLobby(Steam.LOBBY_TYPE_PUBLIC, LOBBY_MAX_MEMBERS)
+		
 
 
 # When the player is joining a lobby
@@ -55,6 +55,9 @@ func _join_Lobby(lobby_id: int) -> void:
 	LOBBY_MEMBERS.clear()
 	# Make the lobby join request to Steam
 	Steam.joinLobby(lobby_id)
+	var lobby_name: String = Steam.getLobbyData(lobby_id, "name")
+	var lobby_nums: int = Steam.getNumLobbyMembers(lobby_id)
+	print("lobby bilgi ! ",lobby_name,lobby_nums)
 	
 
 
@@ -68,6 +71,7 @@ func _leave_Lobby() -> void:
 		Steam.leaveLobby(LOBBY_ID)
 		# Wipe the Steam lobby ID then display the default lobby ID and player list title
 		LOBBY_ID = 0
+		
 		$Frame/Main/Displays/Outputs/Titles/Lobby.set_text("Lobby ID: "+str(LOBBY_ID))
 		$Frame/Main/Displays/PlayerList/Title.set_text("Player List (0)")
 		# Close session with all users
@@ -76,6 +80,7 @@ func _leave_Lobby() -> void:
 			print("[STEAM] P2P session closed with "+str(MEMBERS['steam_id'])+": "+str(SESSION_CLOSED))
 		# Clear the local lobby list
 		Wiring.GameScene._clear_3d_player_models(LOBBY_MEMBERS)
+		Wiring.GameScene._clear_all_players()
 		#$#
 		LOBBY_MEMBERS.clear()
 		
@@ -104,7 +109,7 @@ func _on_Lobby_Created(connect_result: int, lobby_id: int) -> void:
 		var SET_LOBBY_DATA: bool = false
 		SET_LOBBY_DATA = Steam.setLobbyData(lobby_id, "name", str(Global.STEAM_USERNAME)+"'s Lobby")
 		print("[STEAM] Setting lobby name data successful: "+str(SET_LOBBY_DATA))
-		SET_LOBBY_DATA = Steam.setLobbyData(lobby_id, "mode", "GodotSteam test")
+		SET_LOBBY_DATA = Steam.setLobbyData(lobby_id, "mode", "Clown Roulette Test")
 		print("[STEAM] Setting lobby mode data successful: "+str(SET_LOBBY_DATA))
 
 		# Allow P2P connections to fallback to being relayed through Steam if needed
@@ -133,6 +138,7 @@ func _on_Lobby_Joined(lobby_id: int, _permissions: int, _locked: bool, response:
 	if response == 1:
 		# Set this lobby ID as your lobby ID
 		LOBBY_ID = lobby_id
+		Global.CURRENT_LOBBY_ID = LOBBY_ID
 		# Print the lobby ID to a label
 		$Frame/Main/Displays/Outputs/Titles/Lobby.set_text("Lobby ID: "+str(LOBBY_ID))
 		# Append to output
@@ -144,7 +150,7 @@ func _on_Lobby_Joined(lobby_id: int, _permissions: int, _locked: bool, response:
 		# Make the initial handshake
 		_make_P2P_Handshake()
 		
-		Wiring.GameScene._create_3d_player_models(LOBBY_MEMBERS)
+		
 	# Else it failed for some reason
 	else:
 		# Get the failure reason
@@ -225,7 +231,7 @@ func _on_P2P_Session_Connect_Fail(lobby_id: int, session_error: int) -> void:
 # Send test packet information
 func _send_Test_Info() -> void:
 	$Frame/Main/Displays/Outputs/Output.append_text("[STEAM] Sending test packet data...\n")
-	var TEST_DATA: Dictionary = {"action":"a", "player_id":Global.STEAM_ID, "player_hp":"31", "PLAYERDICK_CM":"21CM"}
+	var TEST_DATA: Dictionary = {"action":Global.ACTIONS.PING, "player_id":Global.STEAM_ID}
 	_send_P2P_Packet(0, TEST_DATA)
 
 
@@ -249,6 +255,21 @@ func _read_P2P_Packet() -> void:
 		# Append logic here to deal with packet data
 		if READABLE['message'] == "start":
 			$Frame/Main/Displays/Outputs/Output.append_text("[STEAM] Starting P2P game...\n")
+		if READABLE["action"] == Global.ACTIONS.PING:
+			pass
+		elif READABLE["action"] == Global.ACTIONS.DATA:
+			if READABLE["type"] == Global.TYPES.GUN:
+				Wiring.SilahSistemi.magazineSize = READABLE["size"]
+				Wiring.SilahSistemi.magazineArray = READABLE["magazine"]
+			pass
+		elif READABLE["action"] == Global.ACTIONS.RETURN:
+			pass
+		elif READABLE["action"] == Global.ACTIONS.EMOTE:
+			pass
+		elif READABLE["action"] == Global.ACTIONS.FIRE:
+			pass
+		elif READABLE["action"] == Global.ACTIONS.SPECIAL:
+			pass
 
 
 func _send_P2P_Packet(target: int, packet_data: Dictionary) -> void:
@@ -283,6 +304,8 @@ func _add_Player_List(steam_id: int, steam_name: String) -> void:
 	print("Adding new player to the list: "+str(steam_id)+" / "+str(steam_name))
 	# Add them to the list
 	LOBBY_MEMBERS.append({"steam_id":steam_id, "steam_name":steam_name})
+	Wiring.GameScene._create_3d_player_models(steam_id,steam_name)
+	
 	# Instance the lobby member object
 	var THIS_MEMBER: Object = LOBBY_MEMBER.instantiate()
 	# Add their Steam name and ID
@@ -321,18 +344,21 @@ func _get_Lobby_Members() -> void:
 		MEMBER.queue_free()
 	# Get the number of members from this lobby from Steam
 	var MEMBERS: int = Steam.getNumLobbyMembers(LOBBY_ID)
-	# Update the player list title
-	$Frame/Main/Displays/PlayerList/Title.set_text("Player List ("+str(MEMBERS)+")")
-	# Get the data of these players from Steam
-	for MEMBER in range(0, MEMBERS):
-		print(MEMBER)
-		# Get the member's Steam ID
-		var MEMBER_STEAM_ID: int = Steam.getLobbyMemberByIndex(LOBBY_ID, MEMBER)
-		# Get the member's Steam name
-		var MEMBER_STEAM_NAME: String = Steam.getFriendPersonaName(MEMBER_STEAM_ID)
-		# Add them to the player list
-		_add_Player_List(MEMBER_STEAM_ID, MEMBER_STEAM_NAME)
-
+	if MEMBERS <= 4:
+		
+		# Update the player list title
+		$Frame/Main/Displays/PlayerList/Title.set_text("Player List ("+str(MEMBERS)+")")
+		# Get the data of these players from Steam
+		for MEMBER in range(0, MEMBERS):
+			# Get the member's Steam ID
+			var MEMBER_STEAM_ID: int = Steam.getLobbyMemberByIndex(LOBBY_ID, MEMBER)
+			# Get the member's Steam name
+			var MEMBER_STEAM_NAME: String = Steam.getFriendPersonaName(MEMBER_STEAM_ID)
+			# Add them to the player list
+			_add_Player_List(MEMBER_STEAM_ID, MEMBER_STEAM_NAME)
+	else:
+		print("[STEAM] Server ("+str(LOBBY_ID)+") is full")
+		OS.alert(("[STEAM] Server ("+str(LOBBY_ID)+") is full"),"Clown Roulette")
 
 # A user's information has changed
 func _on_Persona_Change(steam_id: int, _flag: int) -> void:
@@ -442,6 +468,7 @@ func _on_Lobby_Chat_Update(lobby_id: int, changed_id: int, making_change_id: int
 	var CHANGER = Steam.getFriendPersonaName(changed_id)
 	# If a player has joined the lobby
 	if chat_state == 1:
+		#Wiring.GameScene._create_3d_player_models(changed_id,CHANGER)
 		$Frame/Main/Displays/Outputs/Output.append_text("[STEAM] "+str(CHANGER)+" has joined the lobby.\n")
 	# Else if a player has left the lobby
 	elif chat_state == 2:
