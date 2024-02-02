@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cpo8dv2gg3hp4"]
+[gd_scene load_steps=72 format=3 uid="uid://cpo8dv2gg3hp4"]
 
 [ext_resource type="PackedScene" uid="uid://c6d3jnq2a2x7n" path="res://clownRoulette/scenes/world_environment.tscn" id="1_3o2os"]
 [ext_resource type="Texture2D" uid="uid://cmtah7l1qe16x" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Color.png" id="1_x46cc"]
@@ -52,29 +52,6 @@ shader = SubResource("Shader_1gcvh")
 shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.0
 shader_parameter/outer_radius = 2.1
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_78tle"]
-
-[sub_resource type="Sky" id="Sky_87yhq"]
-sky_material = SubResource("PhysicalSkyMaterial_78tle")
-
-[sub_resource type="Environment" id="Environment_rwxum"]
-background_mode = 2
-sky = SubResource("Sky_87yhq")
-ambient_light_source = 3
-reflected_light_source = 2
-tonemap_mode = 2
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-sdfgi_read_sky_light = false
-sdfgi_y_scale = 0
-glow_enabled = true
-volumetric_fog_density = 0.2106
-volumetric_fog_albedo = Color(0.152941, 0.152941, 0.152941, 1)
-volumetric_fog_temporal_reprojection_enabled = false
-adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lu8h"]
 transparency = 1
@@ -557,7 +534,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("1_3o2os")]
-environment = SubResource("Environment_rwxum")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -801,7 +777,6 @@ transform = Transform3D(-2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0, 0.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D/LIGHTS"]
 transform = Transform3D(-0.0755203, 0.356314, -0.931309, 0.0287992, 0.934366, 0.355148, 0.996728, -5.24932e-08, -0.0808252, -8.00576, 0, 0)
-visible = false
 shadow_enabled = true
 shadow_opacity = 0.8
 

@@ -370,7 +370,7 @@ _data = {
 "perdeanim": SubResource("Animation_8lehx")
 }
 
-[node name="Node2" type="Node"]
+[node name="Node" type="Node"]
 
 [node name="MainMenuUI" parent="." instance=ExtResource("1_vocr0")]
 
