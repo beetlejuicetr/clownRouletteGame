@@ -35,18 +35,19 @@ func _create_ray():
 		_search_action(x,x.get_groups(),raycastResult["position"])
 	pass
 
-func _search_action(to,group,position):
+func _search_action(to,group,pos):
 	for i in group:
-		print(i,group)
-		#if group[i] == Global.SP_GROUPS.ENEMY:
-		#	_shoot(to,position)
+		print(i,group,Global.SP_GROUPS)
+		if i == str(Global.SP_GROUPS.ENEMY):
+			_shoot(to,position)
 	pass
 
-func _shoot(to,position):
+func _shoot(to,pos):
 	if Global.SPgunTurn and Global.SPgunHandled:
 		## to.deathAnim()
 		var bulletHoleIns = bulletHole.instantiate()
 		## find mesh for create
-		add_child(bulletHoleIns)
+		bulletHoleIns.positon = pos
+		self.add_child(bulletHoleIns)
 		pass
 	pass
