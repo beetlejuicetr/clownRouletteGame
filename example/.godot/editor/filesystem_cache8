@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706883572
-default_env.tres::Environment::652303920797306553::1706883572::0::1::::<><>::
+::res://::1706884752
+default_env.tres::Environment::652303920797306553::1706884752::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1705769162::0::1::::<><>::
 icon.png::CompressedTexture2D::4516864271877238623::1705768710::1705851020::1::::<><>::
 icon.svg::CompressedTexture2D::2849503021645198700::1705862112::1706277543::1::::<><>::
@@ -130,7 +130,8 @@ splat32.png::CompressedTexture2D::8293755886750537424::1706869381::1706869383::1
 splat33.png::CompressedTexture2D::3534974723344244495::1706869381::1706869383::1::::<><>::
 splat34.png::CompressedTexture2D::6138126428511641547::1706869381::1706869383::1::::<><>::
 splat35.png::CompressedTexture2D::6419453928106114991::1706869381::1706869383::1::::<><>::
-::res://clownRoulette/assets/clown/::1706879235
+::res://clownRoulette/assets/clown/::1706884820
+clown2.blend::PackedScene::8355131033224905591::1706884820::1706884827::1::::<><>::uid://dpm6gfdhuo24c::::res://clownRoulette/assets/clown/textures/Clownbody.png<>uid://dki7d572i6emv::::res://clownRoulette/assets/clown/textures/Clownface.png<>uid://dtryk4l48ln1w::::res://clownRoulette/assets/clown/textures/COLOR.png<>uid://du45bum1iq5fh::::res://clownRoulette/assets/clown/textures/NORMAL.png<>uid://c2gjmh7jwhl3f::::res://clownRoulette/assets/clown/textures/eye.png<>uid://dvegtjuyymy0k::::res://clownRoulette/assets/clown/textures/teeth.png
 clownanims.blend::PackedScene::1390072000104693899::1706879227::1706879235::1::::<><>::uid://f10vy0mxxuye::::res://clownRoulette/assets/clown/materyal/skull.tres<>uid://dn04ft5rb30lm::::res://clownRoulette/assets/clown/materyal/teeth.tres<>uid://n8cpepjjfvyu::::res://clownRoulette/assets/clown/materyal/Material.001.tres<>uid://buv2of2nk54bh::::res://clownRoulette/assets/clown/materyal/eyes.tres<>uid://cw25vcnjc8w8p::::res://clownRoulette/assets/clown/materyal/clownface.tres<>uid://c52037tvulbu7::::res://clownRoulette/assets/clown/materyal/foot.tres<>uid://dbdnmv5cebpca::::res://clownRoulette/assets/clown/materyal/foot2.tres<>uid://bsscbmjrhnhba::::res://clownRoulette/assets/clown/materyal/hand.tres<>uid://b06cpbwgdyqt8::::res://clownRoulette/assets/clown/materyal/Material.tres<>uid://d6df1s8gwoxk::::res://clownRoulette/assets/clown/materyal/chair.tres<>uid://5cagdmci3v3q::::res://clownRoulette/assets/clown/materyal/lambert3.tres
 ::res://clownRoulette/assets/clown/materyal/::1706878574
 chair.tres::StandardMaterial3D::274754716159625984::1706878574::0::1::::<><>::
@@ -178,7 +179,7 @@ Creepy Blood.ttf::FontFile::1512258344105700425::1706285637::1706285638::1::::<>
 More Info.txt::TextFile::-1::1706285637::0::1::::<><>::
 ::res://clownRoulette/assets/masa/::1706106672
 masa.blend::PackedScene::892792562049450302::1706106665::1706106672::1::::<><>::
-::res://clownRoulette/assets/masa/textures/::1706883802
+::res://clownRoulette/assets/masa/textures/::1706883803
 Image_0.png::CompressedTexture2D::1770466432568916559::1706883802::1706883803::1::::<><>::
 Image_1.png::CompressedTexture2D::4392865105658596487::1706106666::1706106669::1::::<><>::
 Image_2.png::CompressedTexture2D::5105902331338731244::1706106666::1706106669::1::::<><>::
@@ -206,8 +207,22 @@ Wood066_1K-PNG_Color.png::CompressedTexture2D::583003411109941972::1706877818::1
 Wood066_1K-PNG_Displacement.png::CompressedTexture2D::4438420329124009148::1706877818::1706877819::1::::<><>::
 Wood066_1K-PNG_NormalGL.png::CompressedTexture2D::1429822597538860113::1706877818::1706877827::1::::<><>::
 Wood066_1K-PNG_Roughness.png::CompressedTexture2D::2926229692468864045::1706877818::1706877827::1::::<><>::
-::res://clownRoulette/assets/sahne/::1706875870
+::res://clownRoulette/assets/sahne/::1706884273
 sahne.blend::PackedScene::1425422611034114415::1706875864::1706875870::1::::<><>::
+::res://clownRoulette/assets/sahne/GLB/::1706884295
+sahne_Fabric026_1K-PNG_Roughness.png::CompressedTexture2D::277546437631109149::1706884282::1706884282::1::::<><>::
+sahne_Fabric026_1K-PNG_Color.png::CompressedTexture2D::2976994242500067612::1706884281::1706884282::1::::<><>::
+sahne_Fabric026_1K-PNG_NormalGL.png::CompressedTexture2D::8860778352358647578::1706884281::1706884282::1::::<><>::
+sahne_Plastic006_1K-PNG_Roughness.png::CompressedTexture2D::5348621196179354572::1706884281::1706884282::1::::<><>::
+sahne_Plastic006_1K-PNG_Color.png::CompressedTexture2D::5225510470627416175::1706884281::1706884282::1::::<><>::
+sahne_Plastic006_1K-PNG_NormalGL.png::CompressedTexture2D::2417888650529905237::1706884281::1706884282::1::::<><>::
+sahne_WoodFloor040_1K-PNG_Roughness.png::CompressedTexture2D::2592455402910040157::1706884280::1706884282::1::::<><>::
+sahne_WoodFloor040_1K-PNG_Color.png::CompressedTexture2D::7524134646870858492::1706884280::1706884282::1::::<><>::
+sahne_WoodFloor040_1K-PNG_NormalGL.png::CompressedTexture2D::6512060042902258040::1706884280::1706884282::1::::<><>::
+sahne_PaintedBricks001_1K-PNG_Roughness.png::CompressedTexture2D::870741101729113001::1706884280::1706884282::1::::<><>::
+sahne_PaintedBricks001_1K-PNG_Color.png::CompressedTexture2D::1172315256912314576::1706884280::1706884282::1::::<><>::
+sahne_PaintedBricks001_1K-PNG_NormalGL.png::CompressedTexture2D::6531166078316586043::1706884279::1706884282::1::::<><>::
+sahne.glb::PackedScene::5657199882616094811::1706884279::1706884295::1::::<><>::uid://qx44jk5thyu7::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Color.png<>uid://mn18jn7jo78h::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Roughness.png<>uid://c0b0l64oktjc2::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_NormalGL.png<>uid://dfg0nsqruusm3::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Color.png<>uid://bc62mkfgcq1kb::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Roughness.png<>uid://cy1qxbf1sw6ue::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_NormalGL.png<>uid://cgpjnnptfwus2::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Color.png<>uid://cig6alft8nphk::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Roughness.png<>uid://bapijjm1hd4tt::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_NormalGL.png<>uid://biocwphwxf5tg::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Color.png<>uid://d7pfcthhrt62::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Roughness.png<>uid://dyihyv78fv6ag::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_NormalGL.png
 ::res://clownRoulette/assets/sahne/textures/::1706104434
 Fabric026_1K-PNG_Color.png::CompressedTexture2D::332218964376780850::1706104423::1706104434::1::::<><>::
 Fabric026_1K-PNG_NormalGL.png::CompressedTexture2D::4337809351004273392::1706104423::1706104434::1::::<><>::
@@ -245,21 +260,21 @@ Image_5.png::CompressedTexture2D::8011031049467011029::1706109187::1706109197::1
 burn.png::CompressedTexture2D::8156693848901398027::1706547630::1706547639::1::::<><>::
 mesh_instance_3d.tscn::PackedScene::6577848746866501070::1706548310::0::1::::<><>::uid://dxqwtxwwhv65q::::res://clownRoulette/assets/shader/burn/new_shader.tres
 new_shader.tres::VisualShader::8808006445776606048::1706881799::0::1::::<><>::uid://dohfs5ym18wal::::res://clownRoulette/assets/shader/burn/burn.png
-::res://clownRoulette/assets/shader/outline/::1706883572
-outline.gdshader::Shader::-1::1706883572::0::1::::<><>::
-::res://clownRoulette/scenes/::1706883572
+::res://clownRoulette/assets/shader/outline/::1706884753
+outline.gdshader::Shader::-1::1706884753::0::1::::<><>::
+::res://clownRoulette/scenes/::1706884753
 blood_splash.tscn::PackedScene::9140988069861607472::1706872227::0::1::::<><>::uid://dvgc60ydpm1qy::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat12.png<>uid://7cywshyvan3c::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat19.png
-bullet_hole.tscn::PackedScene::8214373679114371026::1706882959::0::1::::<><>::uid://ci1gwswws3ox4::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat01.png
+bullet_hole.tscn::PackedScene::8214373679114371026::1706884733::0::1::::<><>::uid://ci1gwswws3ox4::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat01.png
 card.tscn::PackedScene::5662950565840355419::1706789017::0::1::::<><>::uid://cbkltkfbjtkw::::res://clownRoulette/assets/deck/kart_texture.png<>uid://sfitvcnf1hed::::res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png<>res://clownRoulette/scripts/card.gd<>uid://4ivwc08wy7ut::::res://clownRoulette/assets/deck/icons/spin.png
 card_hud.tscn::PackedScene::7331154542978241884::1706442342::0::1::::<><>::uid://d0ssu2picsd0r::::res://clownRoulette/assets/deck/kart_placeholder.png
 GameScene.gd::GDScript::-1::1706279001::0::1::::<>Node3D<>::
 main_game.tscn::PackedScene::257530382571741314::1705929225::0::1::::<><>::uid://cqja8ss7im6l4::::res://Textures/checker_red_512x512.png<>res://clownRoulette/scripts/main_game.gd<>uid://c6d3jnq2a2x7n::::res://clownRoulette/scenes/world_environment.tscn<>uid://bq5irprlvsxoh::::res://Textures/checker_lime_512x512.png<>uid://b7jvhxwsyhm6w::::res://Textures/checker_yellow_512x512.png<>uid://doaw4j8r3er8v::::res://Textures/checker_blue_512x512.png<>uid://boxbrb3h8lwa6::::res://Textures/checker_orange_512x512.png<>uid://6p2b31y6vceq::::res://Textures/checker_magenta_512x512.png
 main_menu.tscn::PackedScene::5491501725314777829::1706097778::0::1::::<><>::uid://doaw4j8r3er8v::::res://Textures/checker_blue_512x512.png<>uid://c6d3jnq2a2x7n::::res://clownRoulette/scenes/world_environment.tscn
 main_menu_ui.tscn::PackedScene::3714696090427094067::1706881326::0::1::::<><>::uid://vssw6eixyfaf::::res://clownRoulette/assets/FONTS/creepy-blood/Creepy Blood.ttf<>res://clownRoulette/scripts/main_menu_ui.gd
-player.tscn::PackedScene::7435447906774151020::1706883572::0::1::::<><>::res://clownRoulette/scripts/Player.gd
+player.tscn::PackedScene::7435447906774151020::1706884733::0::1::::<><>::res://clownRoulette/scripts/Player.gd
 revolver.tscn::PackedScene::7967280584597298510::1706881326::0::1::::<><>::uid://ds111nt3dj2ys::::res://clownRoulette/assets/revolver/revolver.blend
-sahne.tscn::PackedScene::6743792986241008494::1706875959::0::1::::<><>::uid://ukqrcqm7q480::::res://clownRoulette/assets/sahne/sahne.blend
-singleplayer.tscn::PackedScene::5856585473638344695::1706882958::0::1::::<><>::uid://c6d3jnq2a2x7n::::res://clownRoulette/scenes/world_environment.tscn<>uid://cmtah7l1qe16x::::res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Color.png<>uid://d0ssu2picsd0r::::res://clownRoulette/assets/deck/kart_placeholder.png<>uid://d3h70degayfeu::::res://clownRoulette/scenes/blood_splash.tscn<>uid://bouka5pntlxpx::::res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Roughness.png<>uid://cbkltkfbjtkw::::res://clownRoulette/assets/deck/kart_texture.png<>uid://c2n3gah5ulgko::::res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_NormalGL.png<>uid://cy0tjxbcguraf::::res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Color.png<>uid://d3ktvosh5muoi::::res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Roughness.png<>uid://cmje67qwrhvp7::::res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_NormalGL.png<>uid://grpgvaav55yv::::res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Color.png<>uid://l7tdoj06bods::::res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Roughness.png<>uid://qc6y86rxk4kq::::res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_NormalGL.png<>uid://ey6ulce815ry::::res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Color.png<>uid://d3ku2h3j0i4xu::::res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Roughness.png<>uid://b22jc6x64jmpk::::res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_NormalGL.png<>uid://myqfsq3ykh0a::::res://clownRoulette/assets/masa/masa.blend<>uid://yowaw73bpebq::::res://clownRoulette/assets/sandalye/textures/Image_0.png<>uid://cgluci5cj18ua::::res://clownRoulette/assets/sandalye/textures/Image_1.png<>uid://d1ehtlfs7kmr3::::res://clownRoulette/assets/sandalye/textures/Image_2.png<>uid://pmvxhweswkbs::::res://clownRoulette/assets/sandalye/textures/Image_3.png<>uid://cyc6o4rq03r5o::::res://clownRoulette/assets/sandalye/katlanabilir/sandalye_katlanabilir.blend<>uid://cqja8ss7im6l4::::res://Textures/checker_red_512x512.png<>res://clownRoulette/scripts/SilahSistemi.gd<>uid://sfitvcnf1hed::::res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png<>res://clownRoulette/scripts/spCOMPUTER.gd<>uid://dlrn7g7rrs3io::::res://clownRoulette/scenes/revolver.tscn<>uid://b5ja7x1h5rhcw::::res://clownRoulette/assets/deck/cardDeck_cardSide.jpg<>uid://dd610gifoxsky::::res://clownRoulette/scenes/player.tscn<>res://clownRoulette/scripts/spPLAYER.gd<>res://clownRoulette/scripts/cardDeckSP.gd<>uid://c30svcs3ijmkh::::res://clownRoulette/assets/mermi/mermi.blend
+sahne.tscn::PackedScene::6743792986241008494::1706884734::0::1::::<><>::uid://qx44jk5thyu7::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Color.png<>uid://mn18jn7jo78h::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Roughness.png<>uid://c0b0l64oktjc2::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_NormalGL.png<>uid://dfg0nsqruusm3::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Color.png<>uid://bc62mkfgcq1kb::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Roughness.png<>uid://cy1qxbf1sw6ue::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_NormalGL.png<>uid://cgpjnnptfwus2::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Color.png<>uid://cig6alft8nphk::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Roughness.png<>uid://bapijjm1hd4tt::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_NormalGL.png<>uid://biocwphwxf5tg::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Color.png<>uid://d7pfcthhrt62::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Roughness.png<>uid://dyihyv78fv6ag::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_NormalGL.png
+singleplayer.tscn::PackedScene::5856585473638344695::1706884753::0::1::::<><>::uid://c6d3jnq2a2x7n::::res://clownRoulette/scenes/world_environment.tscn<>uid://d0ssu2picsd0r::::res://clownRoulette/assets/deck/kart_placeholder.png<>uid://d3h70degayfeu::::res://clownRoulette/scenes/blood_splash.tscn<>uid://qx44jk5thyu7::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Color.png<>uid://cbkltkfbjtkw::::res://clownRoulette/assets/deck/kart_texture.png<>uid://mn18jn7jo78h::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_Roughness.png<>uid://c0b0l64oktjc2::::res://clownRoulette/assets/sahne/GLB/sahne_PaintedBricks001_1K-PNG_NormalGL.png<>uid://dfg0nsqruusm3::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Color.png<>uid://bc62mkfgcq1kb::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_Roughness.png<>uid://cy1qxbf1sw6ue::::res://clownRoulette/assets/sahne/GLB/sahne_WoodFloor040_1K-PNG_NormalGL.png<>uid://cgpjnnptfwus2::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Color.png<>uid://cig6alft8nphk::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_Roughness.png<>uid://bapijjm1hd4tt::::res://clownRoulette/assets/sahne/GLB/sahne_Plastic006_1K-PNG_NormalGL.png<>uid://biocwphwxf5tg::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Color.png<>uid://d7pfcthhrt62::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_Roughness.png<>uid://myqfsq3ykh0a::::res://clownRoulette/assets/masa/masa.blend<>uid://dyihyv78fv6ag::::res://clownRoulette/assets/sahne/GLB/sahne_Fabric026_1K-PNG_NormalGL.png<>uid://yowaw73bpebq::::res://clownRoulette/assets/sandalye/textures/Image_0.png<>uid://cgluci5cj18ua::::res://clownRoulette/assets/sandalye/textures/Image_1.png<>uid://d1ehtlfs7kmr3::::res://clownRoulette/assets/sandalye/textures/Image_2.png<>uid://pmvxhweswkbs::::res://clownRoulette/assets/sandalye/textures/Image_3.png<>uid://cyc6o4rq03r5o::::res://clownRoulette/assets/sandalye/katlanabilir/sandalye_katlanabilir.blend<>uid://cqja8ss7im6l4::::res://Textures/checker_red_512x512.png<>res://clownRoulette/scripts/SilahSistemi.gd<>uid://sfitvcnf1hed::::res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png<>res://clownRoulette/scripts/spCOMPUTER.gd<>uid://dlrn7g7rrs3io::::res://clownRoulette/scenes/revolver.tscn<>uid://b5ja7x1h5rhcw::::res://clownRoulette/assets/deck/cardDeck_cardSide.jpg<>uid://dd610gifoxsky::::res://clownRoulette/scenes/player.tscn<>res://clownRoulette/scripts/spPLAYER.gd<>res://clownRoulette/scripts/cardDeckSP.gd<>uid://c30svcs3ijmkh::::res://clownRoulette/assets/mermi/mermi.blend
 world_environment.tscn::PackedScene::6956605510118258273::1706881326::0::1::::<><>::
 ::res://clownRoulette/scripts/::1706883572
 card.gd::GDScript::-1::1706555401::0::1::::<>MeshInstance3D<>::
@@ -272,8 +287,8 @@ PlayerCamera.gd::GDScript::-1::1706193013::0::1::::<>Camera3D<>::
 SilahSistemi.gd::GDScript::-1::1706790067::0::1::::<>Node3D<>::
 spCOMPUTER.gd::GDScript::-1::1706555473::0::1::::<>Node3D<>::
 spPLAYER.gd::GDScript::-1::1706883051::0::1::::<>Node3D<>::
-::res://clownRoulette/test/::1706882959
-node_3_dtest.tscn::PackedScene::6313433859366243718::1706882959::0::1::::<><>::uid://dvgc60ydpm1qy::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat12.png<>uid://d3h70degayfeu::::res://clownRoulette/scenes/blood_splash.tscn<>uid://7cywshyvan3c::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat19.png<>uid://dpbdsfyqre6qg::::res://clownRoulette/scenes/bullet_hole.tscn
+::res://clownRoulette/test/::1706884734
+node_3_dtest.tscn::PackedScene::6313433859366243718::1706884734::0::1::::<><>::uid://dvgc60ydpm1qy::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat12.png<>uid://d3h70degayfeu::::res://clownRoulette/scenes/blood_splash.tscn<>uid://7cywshyvan3c::::res://clownRoulette/assets/blood/PNG/Default (256px)/splat19.png<>uid://dpbdsfyqre6qg::::res://clownRoulette/scenes/bullet_hole.tscn
 ::res://data/::1705860121
 ::res://data/fonts/::1705860121
 button-text.tres::FontFile::-1::1705768713::0::1::::<><>::res://data/fonts/Roboto-Bold.ttf

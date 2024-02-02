@@ -1,7 +1,8 @@
-CSGBox3D
+Camera3D
 CSGMesh3D
-Decal
+CSGBox3D
 CSGCylinder3D
+Decal
 ColorRect
 TextureRect
 Control
@@ -11,4 +12,3 @@ OmniLight3D
 SpotLight3D
 Node3D
 DirectionalLight3D
-Camera3D
