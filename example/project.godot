@@ -28,13 +28,15 @@ CameraManager="*res://addons/DynamicCameraSystem/CameraManager.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [editor]
 
+movie_writer/movie_file="C:/Users/ismai/Videos/output.avi"
 import/reimport_missing_imported_files=false
 
 [editor_plugins]
@@ -105,4 +107,18 @@ file_logging/enable_file_logging=true
 
 [rendering]
 
+lights_and_shadows/directional_shadow/size=8192
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=5
+environment/ssao/quality=4
+environment/ssil/quality=4
+environment/screen_space_reflection/roughness_quality=3
+anti_aliasing/quality/msaa_2d=3
+anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_taa=true
+lights_and_shadows/positional_shadow/atlas_size=8192
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=3
+lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=4
+lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=5
+lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=6
 environment/defaults/default_environment="res://default_env.tres"

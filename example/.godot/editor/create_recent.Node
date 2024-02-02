@@ -1,14 +1,14 @@
+SpotLight3D
+VoxelGI
 ColorRect
 TextureRect
 Control
 CanvasModulate
 CanvasLayer
 OmniLight3D
-SpotLight3D
 Node3D
 DirectionalLight3D
 Camera3D
 MeshInstance3D
 GPUParticlesCollisionBox3D
 GPUParticles3D
-CSGMesh3D

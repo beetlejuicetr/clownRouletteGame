@@ -99,6 +99,8 @@ shadow_mesh = SubResource("ArrayMesh_hc87i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm3kf"]
 albedo_color = Color(0.486275, 0.486275, 0.486275, 1)
+metallic = 1.0
+roughness = 0.46
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0qwu"]
 
@@ -406,6 +408,7 @@ bone_name = "revolver click"
 bone_idx = 10
 
 [node name="revolver click" type="MeshInstance3D" parent="revover/Armature/Skeleton3D/revolver click"]
+transform = Transform3D(1, 8.78424e-21, -2.1684e-19, -2.18195e-22, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ogutb")
 skeleton = NodePath("")
 
@@ -415,6 +418,8 @@ bone_name = "Revolverbody"
 bone_idx = 11
 
 [node name="Revolverbody" type="MeshInstance3D" parent="revover/Armature/Skeleton3D/Revolverbody"]
+transform = Transform3D(1, -1.69407e-21, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+cast_shadow = 2
 mesh = SubResource("ArrayMesh_b7oru")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_43mo0")

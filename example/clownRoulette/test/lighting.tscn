@@ -1,37 +1,36 @@
-[gd_scene load_steps=75 format=3 uid="uid://cpo8dv2gg3hp4"]
+[gd_scene load_steps=72 format=3 uid="uid://0ijllkmenab5"]
 
-[ext_resource type="PackedScene" uid="uid://c6d3jnq2a2x7n" path="res://clownRoulette/scenes/world_environment.tscn" id="1_3o2os"]
-[ext_resource type="Texture2D" uid="uid://cmtah7l1qe16x" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Color.png" id="1_x46cc"]
-[ext_resource type="Texture2D" uid="uid://d0ssu2picsd0r" path="res://clownRoulette/assets/deck/kart_placeholder.png" id="2_78p8v"]
-[ext_resource type="PackedScene" uid="uid://d3h70degayfeu" path="res://clownRoulette/scenes/blood_splash.tscn" id="2_dsa42"]
-[ext_resource type="Texture2D" uid="uid://bouka5pntlxpx" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Roughness.png" id="2_j8qj4"]
-[ext_resource type="Texture2D" uid="uid://cbkltkfbjtkw" path="res://clownRoulette/assets/deck/kart_texture.png" id="2_wphtt"]
-[ext_resource type="Texture2D" uid="uid://c2n3gah5ulgko" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_NormalGL.png" id="3_jrn0x"]
-[ext_resource type="Texture2D" uid="uid://cy0tjxbcguraf" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Color.png" id="4_ff7a4"]
-[ext_resource type="Texture2D" uid="uid://d3ktvosh5muoi" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Roughness.png" id="5_jij0b"]
-[ext_resource type="Texture2D" uid="uid://cmje67qwrhvp7" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_NormalGL.png" id="6_nyvtm"]
-[ext_resource type="Texture2D" uid="uid://grpgvaav55yv" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Color.png" id="7_adfgx"]
-[ext_resource type="Texture2D" uid="uid://l7tdoj06bods" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Roughness.png" id="8_ew5sp"]
-[ext_resource type="Texture2D" uid="uid://qc6y86rxk4kq" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_NormalGL.png" id="9_77whe"]
-[ext_resource type="Texture2D" uid="uid://ey6ulce815ry" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Color.png" id="10_gopjx"]
-[ext_resource type="Texture2D" uid="uid://d3ku2h3j0i4xu" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Roughness.png" id="11_ofkqd"]
-[ext_resource type="Texture2D" uid="uid://b22jc6x64jmpk" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_NormalGL.png" id="12_grf88"]
-[ext_resource type="PackedScene" uid="uid://myqfsq3ykh0a" path="res://clownRoulette/assets/masa/masa.blend" id="13_k0skn"]
-[ext_resource type="Texture2D" uid="uid://yowaw73bpebq" path="res://clownRoulette/assets/sandalye/textures/Image_0.png" id="14_8oaqy"]
-[ext_resource type="Texture2D" uid="uid://cgluci5cj18ua" path="res://clownRoulette/assets/sandalye/textures/Image_1.png" id="15_bxibc"]
-[ext_resource type="Texture2D" uid="uid://d1ehtlfs7kmr3" path="res://clownRoulette/assets/sandalye/textures/Image_2.png" id="16_k2sel"]
-[ext_resource type="Texture2D" uid="uid://pmvxhweswkbs" path="res://clownRoulette/assets/sandalye/textures/Image_3.png" id="17_e1kqw"]
-[ext_resource type="PackedScene" uid="uid://cyc6o4rq03r5o" path="res://clownRoulette/assets/sandalye/katlanabilir/sandalye_katlanabilir.blend" id="18_wrlm5"]
-[ext_resource type="Texture2D" uid="uid://cqja8ss7im6l4" path="res://Textures/checker_red_512x512.png" id="19_u1snf"]
-[ext_resource type="Script" path="res://clownRoulette/scripts/SilahSistemi.gd" id="21_higas"]
-[ext_resource type="Texture2D" uid="uid://sfitvcnf1hed" path="res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png" id="21_oyb47"]
-[ext_resource type="Script" path="res://clownRoulette/scripts/spCOMPUTER.gd" id="22_05nl6"]
-[ext_resource type="PackedScene" uid="uid://dlrn7g7rrs3io" path="res://clownRoulette/scenes/revolver.tscn" id="22_aom13"]
-[ext_resource type="Texture2D" uid="uid://b5ja7x1h5rhcw" path="res://clownRoulette/assets/deck/cardDeck_cardSide.jpg" id="22_ouipt"]
-[ext_resource type="PackedScene" uid="uid://dd610gifoxsky" path="res://clownRoulette/scenes/player.tscn" id="22_owg85"]
-[ext_resource type="Script" path="res://clownRoulette/scripts/spPLAYER.gd" id="22_qj1ps"]
-[ext_resource type="Script" path="res://clownRoulette/scripts/cardDeckSP.gd" id="23_2im00"]
-[ext_resource type="PackedScene" uid="uid://c30svcs3ijmkh" path="res://clownRoulette/assets/mermi/mermi.blend" id="23_kcn8g"]
+[ext_resource type="PackedScene" uid="uid://c6d3jnq2a2x7n" path="res://clownRoulette/scenes/world_environment.tscn" id="1_48qmq"]
+[ext_resource type="Texture2D" uid="uid://d0ssu2picsd0r" path="res://clownRoulette/assets/deck/kart_placeholder.png" id="3_eh1eg"]
+[ext_resource type="Texture2D" uid="uid://cbkltkfbjtkw" path="res://clownRoulette/assets/deck/kart_texture.png" id="4_y1a6m"]
+[ext_resource type="Texture2D" uid="uid://cmtah7l1qe16x" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Color.png" id="5_11834"]
+[ext_resource type="Texture2D" uid="uid://bouka5pntlxpx" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_Roughness.png" id="6_g1mwt"]
+[ext_resource type="Texture2D" uid="uid://c2n3gah5ulgko" path="res://clownRoulette/assets/sahne/textures/PaintedBricks001_1K-PNG_NormalGL.png" id="7_0wumt"]
+[ext_resource type="Texture2D" uid="uid://cy0tjxbcguraf" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Color.png" id="8_0b26l"]
+[ext_resource type="Texture2D" uid="uid://d3ktvosh5muoi" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_Roughness.png" id="9_naek8"]
+[ext_resource type="Texture2D" uid="uid://cmje67qwrhvp7" path="res://clownRoulette/assets/sahne/textures/WoodFloor040_1K-PNG_NormalGL.png" id="10_5tl2p"]
+[ext_resource type="Texture2D" uid="uid://grpgvaav55yv" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Color.png" id="11_3avrb"]
+[ext_resource type="Texture2D" uid="uid://l7tdoj06bods" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_Roughness.png" id="12_bad1b"]
+[ext_resource type="Texture2D" uid="uid://qc6y86rxk4kq" path="res://clownRoulette/assets/sahne/textures/Plastic006_1K-PNG_NormalGL.png" id="13_ewglu"]
+[ext_resource type="Texture2D" uid="uid://ey6ulce815ry" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Color.png" id="14_x60f5"]
+[ext_resource type="Texture2D" uid="uid://d3ku2h3j0i4xu" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_Roughness.png" id="15_jr2qt"]
+[ext_resource type="Texture2D" uid="uid://b22jc6x64jmpk" path="res://clownRoulette/assets/sahne/textures/Fabric026_1K-PNG_NormalGL.png" id="16_r7y0i"]
+[ext_resource type="PackedScene" uid="uid://myqfsq3ykh0a" path="res://clownRoulette/assets/masa/masa.blend" id="17_o1ikd"]
+[ext_resource type="Texture2D" uid="uid://yowaw73bpebq" path="res://clownRoulette/assets/sandalye/textures/Image_0.png" id="18_a41nl"]
+[ext_resource type="Texture2D" uid="uid://cgluci5cj18ua" path="res://clownRoulette/assets/sandalye/textures/Image_1.png" id="19_2ye4d"]
+[ext_resource type="Texture2D" uid="uid://d1ehtlfs7kmr3" path="res://clownRoulette/assets/sandalye/textures/Image_2.png" id="20_tynxc"]
+[ext_resource type="Texture2D" uid="uid://pmvxhweswkbs" path="res://clownRoulette/assets/sandalye/textures/Image_3.png" id="21_ojslb"]
+[ext_resource type="PackedScene" uid="uid://cyc6o4rq03r5o" path="res://clownRoulette/assets/sandalye/katlanabilir/sandalye_katlanabilir.blend" id="22_6287a"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/spPLAYER.gd" id="23_88aid"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/spCOMPUTER.gd" id="24_vgrg0"]
+[ext_resource type="PackedScene" uid="uid://dd610gifoxsky" path="res://clownRoulette/scenes/player.tscn" id="25_tpe7g"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/cardDeckSP.gd" id="26_fn24t"]
+[ext_resource type="Texture2D" uid="uid://sfitvcnf1hed" path="res://clownRoulette/assets/deck/cardDeck_kartArka_texture.png" id="27_34yux"]
+[ext_resource type="Texture2D" uid="uid://b5ja7x1h5rhcw" path="res://clownRoulette/assets/deck/cardDeck_cardSide.jpg" id="28_1i7mf"]
+[ext_resource type="Script" path="res://clownRoulette/scripts/SilahSistemi.gd" id="29_fp2oe"]
+[ext_resource type="PackedScene" uid="uid://dlrn7g7rrs3io" path="res://clownRoulette/scenes/revolver.tscn" id="30_t8rkv"]
+[ext_resource type="PackedScene" uid="uid://c30svcs3ijmkh" path="res://clownRoulette/assets/mermi/mermi.blend" id="31_fsgrk"]
+[ext_resource type="Texture2D" uid="uid://cqja8ss7im6l4" path="res://Textures/checker_red_512x512.png" id="32_qy042"]
 
 [sub_resource type="Shader" id="Shader_1gcvh"]
 code = "shader_type canvas_item;
@@ -53,28 +52,23 @@ shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.0
 shader_parameter/outer_radius = 2.1
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_78tle"]
-
-[sub_resource type="Sky" id="Sky_87yhq"]
-sky_material = SubResource("PhysicalSkyMaterial_78tle")
-
-[sub_resource type="Environment" id="Environment_rwxum"]
-background_mode = 2
-sky = SubResource("Sky_87yhq")
-ambient_light_source = 3
-reflected_light_source = 2
+[sub_resource type="Environment" id="Environment_485fn"]
+ambient_light_source = 2
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
-sdfgi_read_sky_light = false
-sdfgi_y_scale = 0
 glow_enabled = true
-volumetric_fog_density = 0.2106
-volumetric_fog_albedo = Color(0.152941, 0.152941, 0.152941, 1)
-volumetric_fog_temporal_reprojection_enabled = false
+glow_intensity = 2.4
+glow_strength = 1.05
+glow_blend_mode = 0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.6525
+volumetric_fog_albedo = Color(0.301961, 0.301961, 0.301961, 1)
 adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lu8h"]
 transparency = 1
@@ -82,7 +76,7 @@ blend_mode = 1
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 2
-albedo_texture = ExtResource("2_78p8v")
+albedo_texture = ExtResource("3_eh1eg")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_61nmn"]
 size = Vector2(2, 3)
@@ -93,47 +87,47 @@ blend_mode = 1
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 2
-albedo_texture = ExtResource("2_wphtt")
+albedo_texture = ExtResource("4_y1a6m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u23p6"]
 resource_name = "sahneduvar"
 cull_mode = 2
-albedo_texture = ExtResource("1_x46cc")
-metallic_texture = ExtResource("2_j8qj4")
+albedo_texture = ExtResource("5_11834")
+metallic_texture = ExtResource("6_g1mwt")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_j8qj4")
+roughness_texture = ExtResource("6_g1mwt")
 roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = 1.2
-normal_texture = ExtResource("3_jrn0x")
+normal_texture = ExtResource("7_0wumt")
 uv1_scale = Vector3(5, 5, 1)
 uv1_offset = Vector3(0, -4, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pnwh"]
 resource_name = "sahnefloor"
 cull_mode = 2
-albedo_texture = ExtResource("4_ff7a4")
-metallic_texture = ExtResource("5_jij0b")
+albedo_texture = ExtResource("8_0b26l")
+metallic_texture = ExtResource("9_naek8")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("5_jij0b")
+roughness_texture = ExtResource("9_naek8")
 roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = 10.0
-normal_texture = ExtResource("6_nyvtm")
+normal_texture = ExtResource("10_5tl2p")
 uv1_scale = Vector3(5, 5.2, 1)
 uv1_offset = Vector3(0, -4.2, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjgsa"]
 resource_name = "sahnedis"
 cull_mode = 2
-albedo_texture = ExtResource("7_adfgx")
-metallic_texture = ExtResource("8_ew5sp")
+albedo_texture = ExtResource("11_3avrb")
+metallic_texture = ExtResource("12_bad1b")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("8_ew5sp")
+roughness_texture = ExtResource("12_bad1b")
 roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = 5.4
-normal_texture = ExtResource("9_77whe")
+normal_texture = ExtResource("13_ewglu")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t3v6h"]
 _surfaces = [{
@@ -218,14 +212,14 @@ shadow_mesh = SubResource("ArrayMesh_t3v6h")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_603vg"]
 resource_name = "curtain"
 cull_mode = 2
-albedo_texture = ExtResource("10_gopjx")
-metallic_texture = ExtResource("11_ofkqd")
+albedo_texture = ExtResource("14_x60f5")
+metallic_texture = ExtResource("15_jr2qt")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("11_ofkqd")
+roughness_texture = ExtResource("15_jr2qt")
 roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = 10.0
-normal_texture = ExtResource("12_grf88")
+normal_texture = ExtResource("16_r7y0i")
 uv1_scale = Vector3(8, 8, 1)
 uv1_offset = Vector3(0, -7, 0)
 
@@ -407,18 +401,18 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uipuk"]
-albedo_texture = ExtResource("14_8oaqy")
+albedo_texture = ExtResource("18_a41nl")
 metallic = 1.0
-metallic_texture = ExtResource("15_bxibc")
+metallic_texture = ExtResource("19_2ye4d")
 normal_enabled = true
-normal_texture = ExtResource("16_k2sel")
+normal_texture = ExtResource("20_tynxc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcrrv"]
 resource_name = "lambert7SG"
 cull_mode = 2
 metallic = 1.0
 ao_enabled = true
-ao_texture = ExtResource("17_e1kqw")
+ao_texture = ExtResource("21_ojslb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vphnk"]
 _surfaces = [{
@@ -457,12 +451,12 @@ shadow_mesh = SubResource("ArrayMesh_vphnk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3sd2"]
 resource_name = "cardDeck_back"
 cull_mode = 2
-albedo_texture = ExtResource("21_oyb47")
+albedo_texture = ExtResource("27_34yux")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6q7v"]
 resource_name = "cardDeck_side"
 cull_mode = 2
-albedo_texture = ExtResource("22_ouipt")
+albedo_texture = ExtResource("28_1i7mf")
 uv1_scale = Vector3(1, 22.1, 1)
 uv1_offset = Vector3(0, -21.1, 0)
 
@@ -527,8 +521,9 @@ size = Vector3(4.17212, 2.40808, 6.61035)
 size = Vector3(0.347656, 0.0691833, 0.583862)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ef2w"]
-albedo_texture = ExtResource("19_u1snf")
+albedo_texture = ExtResource("32_qy042")
 uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wu0in"]
 size = Vector2(20, 20)
@@ -556,13 +551,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_3o2os")]
-environment = SubResource("Environment_rwxum")
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_48qmq")]
+environment = SubResource("Environment_485fn")
 
 [node name="Node3D" type="Node3D" parent="."]
-
-[node name="bloodSplash" parent="Node3D" instance=ExtResource("2_dsa42")]
-transform = Transform3D(-0.0140495, 0, -0.999901, 0, 1, 0, 0.999901, 0, -0.0140495, -0.985427, 2.27194, -0.39994)
 
 [node name="cardPlaceHolderPlayer" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618192, 1.47791, 1.4227)
@@ -673,7 +665,7 @@ libraries = {
 [node name="CamReset" type="Marker3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26709, 1.93535, 0.190147)
 
-[node name="masa" parent="Node3D" instance=ExtResource("13_k0skn")]
+[node name="masa" parent="Node3D" instance=ExtResource("17_o1ikd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255565, 0.137113, 0)
 
 [node name="MasaSandalyeleri" type="Node3D" parent="Node3D"]
@@ -713,33 +705,33 @@ skeleton = NodePath("")
 
 [node name="SeyirciSandalyeleri" type="Node3D" parent="Node3D"]
 
-[node name="sandalye_katlanabilir" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(0.130681, 0, 0.430607, 0, 0.45, 0, -0.430607, 0, 0.130681, -6.62211, -0.545866, -2.53319)
 
-[node name="sandalye_katlanabilir2" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir2" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(-0.0838355, 0, 0.442122, 0, 0.45, 0, -0.442122, 0, -0.0838355, -6.92934, -0.545866, -0.487392)
 
-[node name="sandalye_katlanabilir3" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir3" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(-0.0864422, 0, 0.441619, 0, 0.45, 0, -0.441619, 0, -0.0864422, -6.64167, -0.545866, 1.45569)
 
-[node name="sandalye_katlanabilir4" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir4" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(-0.286362, 0, 0.347126, 0, 0.45, 0, -0.347126, 0, -0.286362, -5.82911, -0.545866, 3.21051)
 
-[node name="sandalye_katlanabilir5" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir5" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(0.130681, 0, 0.430607, 0, 0.45, 0, -0.430607, 0, 0.130681, -8.61624, -0.545866, -3.85739)
 
-[node name="sandalye_katlanabilir6" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir6" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(0.0584331, 0, 0.44619, 0, 0.45, 0, -0.44619, 0, 0.0584331, -8.78189, -0.545866, -1.81048)
 
-[node name="sandalye_katlanabilir7" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir7" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(-0.0864422, 0, 0.441619, 0, 0.45, 0, -0.441619, 0, -0.0864422, -8.78337, -0.545866, 0.952325)
 
-[node name="sandalye_katlanabilir8" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("18_wrlm5")]
+[node name="sandalye_katlanabilir8" parent="Node3D/SeyirciSandalyeleri" instance=ExtResource("22_6287a")]
 transform = Transform3D(-0.234615, 0, 0.384, 0, 0.45, 0, -0.384, 0, -0.234615, -7.86491, -0.545866, 3.55778)
 
 [node name="PLAYER" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433185, 1.38735, 2.15327)
-script = ExtResource("22_qj1ps")
+script = ExtResource("23_88aid")
 
 [node name="playerHand" type="Marker3D" parent="Node3D/PLAYER"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.347966, 0.445775, -0.709635)
@@ -754,16 +746,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538217, -0.628031)
 
 [node name="COMPUTER" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391501, 1.35273, -2.22022)
-script = ExtResource("22_05nl6")
+script = ExtResource("24_vgrg0")
 
-[node name="PLAYER" parent="Node3D/COMPUTER" instance=ExtResource("22_owg85")]
+[node name="PLAYER" parent="Node3D/COMPUTER" instance=ExtResource("25_tpe7g")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.925, 0.145)
 
 [node name="Timer" type="Timer" parent="Node3D/COMPUTER"]
 
 [node name="cardDeck" type="Node3D" parent="Node3D"]
 transform = Transform3D(0.05, 0, 0, 0, 0.025, 0, 0, 0, 0.05, 0.338604, 1.49528, 0.173784)
-script = ExtResource("23_2im00")
+script = ExtResource("26_fn24t")
 
 [node name="Cube" type="MeshInstance3D" parent="Node3D/cardDeck"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
@@ -777,7 +769,7 @@ shape = SubResource("BoxShape3D_1naoy")
 
 [node name="SilahSistemi" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308601, 1.59889, -0.0466524)
-script = ExtResource("21_higas")
+script = ExtResource("29_fp2oe")
 
 [node name="enemyLook" type="Marker3D" parent="Node3D/SilahSistemi"]
 transform = Transform3D(1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 0, 0, 1, 0, 0.448737, -1.3241)
@@ -788,13 +780,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0, -0.123523, 0)
 [node name="RevolverArea" type="Area3D" parent="Node3D/SilahSistemi"]
 transform = Transform3D(1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="REVOLVER" parent="Node3D/SilahSistemi/RevolverArea" instance=ExtResource("22_aom13")]
-transform = Transform3D(-6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0, 0.15, 0, 0, 0)
+[node name="REVOLVER" parent="Node3D/SilahSistemi/RevolverArea" instance=ExtResource("30_t8rkv")]
+transform = Transform3D(-6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0, 0.15, 0, -0.0206506, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/SilahSistemi/RevolverArea"]
 shape = SubResource("BoxShape3D_s0t2o")
 
-[node name="mermi" parent="Node3D" instance=ExtResource("23_kcn8g")]
+[node name="mermi" parent="Node3D" instance=ExtResource("31_fsgrk")]
 transform = Transform3D(-2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0, 0.05, -0.222993, 1.5167, 0.385957)
 
 [node name="LIGHTS" type="Node3D" parent="Node3D"]
@@ -806,10 +798,27 @@ shadow_enabled = true
 shadow_opacity = 0.8
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D/LIGHTS"]
-transform = Transform3D(0.892976, 0.360861, -0.269021, 0, 0.597687, 0.801729, 0.450103, -0.715925, 0.533721, -2.00698, 6.9109, 3.7073)
+transform = Transform3D(0.892977, 0.360861, -0.269021, 0, 0.597687, 0.801729, 0.450103, -0.715925, 0.533721, -2.00698, 6.9109, 3.7073)
 light_color = Color(0.996078, 0.941176, 0.886275, 1)
 shadow_enabled = true
 spot_range = 12.8826
+spot_attenuation = 0.297302
+spot_angle = 27.237
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Node3D/LIGHTS"]
+transform = Transform3D(0.433947, -0.722309, 0.538479, -2.67205e-08, 0.597687, 0.801729, -0.900938, -0.347908, 0.259365, -1.85616, 6.93754, 2.78514)
+light_color = Color(0.996078, 0.941176, 0.886275, 1)
+shadow_enabled = true
+spot_range = 47.5532
+spot_attenuation = 0.0281641
+spot_angle = 27.237
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Node3D/LIGHTS"]
+transform = Transform3D(-0.144144, -0.793357, 0.591446, -4.01455e-08, 0.597687, 0.801729, -0.989557, 0.115564, -0.0861528, -1.85616, 6.93754, -2.20138)
+light_color = Color(0.996078, 0.941176, 0.886275, 1)
+shadow_enabled = true
+spot_range = 27.0
+spot_attenuation = 0.00404401
 spot_angle = 27.237
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Node3D/LIGHTS"]
@@ -817,15 +826,34 @@ transform = Transform3D(-0.946933, 0.253996, -0.196988, 0, 0.612846, 0.790202, 0
 light_color = Color(0.996078, 0.941176, 0.886275, 1)
 shadow_enabled = true
 spot_range = 12.8826
+spot_attenuation = 0.31864
 spot_angle = 21.0358
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D/LIGHTS"]
-transform = Transform3D(0.993068, 0.0415571, -0.109952, 0, 0.935417, 0.353546, 0.117543, -0.351095, 0.928932, 0.666133, 3.0353, 0.626873)
+transform = Transform3D(0.993068, 0.00457854, -0.117454, 0, 0.999241, 0.0389521, 0.117543, -0.038682, 0.992314, 1.52435, 3.02972, 0.014501)
 light_color = Color(0.721569, 0.317647, 0, 1)
-shadow_enabled = true
+light_energy = 1.868
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Node3D/LIGHTS"]
+transform = Transform3D(0.993068, 0.00457854, -0.117454, 0, 0.999241, 0.0389521, 0.117543, -0.038682, 0.992314, -2.34104, 3.02972, -0.44302)
+light_color = Color(0.721569, 0.317647, 0, 1)
+light_energy = 1.62
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D/LIGHTS"]
+transform = Transform3D(0.993068, 0.00457854, -0.117454, 0, 0.999241, 0.0389521, 0.117543, -0.038682, 0.992314, -0.507338, 3.07423, -1.44374)
+light_color = Color(0.721569, 0.317647, 0, 1)
+omni_range = 2.57362
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Node3D/LIGHTS"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.371615, 6.64928, -1.07917)
+light_color = Color(0.894118, 0.623529, 0.537255, 1)
+spot_range = 9.46453
+spot_attenuation = 0.0563282
+spot_angle = 23.5391
+spot_angle_attenuation = 0.965937
 
 [node name="FLOOR" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09516, -0.523799, 0)
+transform = Transform3D(5.33156, 0, 0, 0, 1, 0, 0, 0, 5.33156, -4.09516, -0.523799, 0)
 material_override = SubResource("StandardMaterial3D_1ef2w")
 mesh = SubResource("PlaneMesh_wu0in")
 
