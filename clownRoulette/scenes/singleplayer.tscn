@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cpo8dv2gg3hp4"]
+[gd_scene load_steps=73 format=3 uid="uid://cpo8dv2gg3hp4"]
 
 [ext_resource type="PackedScene" uid="uid://c6d3jnq2a2x7n" path="res://clownRoulette/scenes/world_environment.tscn" id="1_3o2os"]
 [ext_resource type="Texture2D" uid="uid://d0ssu2picsd0r" path="res://clownRoulette/assets/deck/kart_placeholder.png" id="2_78p8v"]
@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dd610gifoxsky" path="res://clownRoulette/scenes/player.tscn" id="22_owg85"]
 [ext_resource type="Script" path="res://clownRoulette/scripts/spPLAYER.gd" id="22_qj1ps"]
 [ext_resource type="Script" path="res://clownRoulette/scripts/cardDeckSP.gd" id="23_2im00"]
-[ext_resource type="PackedScene" uid="uid://c30svcs3ijmkh" path="res://clownRoulette/assets/mermi/mermi.blend" id="23_kcn8g"]
+[ext_resource type="PackedScene" uid="uid://c2fauf8w3ksdx" path="res://clownRoulette/scenes/xenon_camera_3d.tscn" id="24_ulj1e"]
 
 [sub_resource type="Shader" id="Shader_1gcvh"]
 code = "shader_type canvas_item;
@@ -500,6 +500,9 @@ shadow_mesh = SubResource("ArrayMesh_10x5n")
 [sub_resource type="BoxShape3D" id="BoxShape3D_1naoy"]
 size = Vector3(4.17212, 2.40808, 6.61035)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrvxu"]
+size = Vector3(4.03, 3.27, 4.45)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0t2o"]
 size = Vector3(0.347656, 0.128563, 0.583862)
 
@@ -718,12 +721,11 @@ transform = Transform3D(-0.234615, 0, 0.384, 0, 0.45, 0, -0.384, 0, -0.234615, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433185, 1.38735, 2.15327)
 script = ExtResource("22_qj1ps")
 
-[node name="playerHand" type="Marker3D" parent="Node3D/PLAYER"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.347966, 0.445775, -0.709635)
+[node name="XenonCamera3D" parent="Node3D/PLAYER" instance=ExtResource("24_ulj1e")]
+transform = Transform3D(1, 0, 0, 0, 0.979396, 0.20195, 0, -0.20195, 0.979396, 0.184589, 0.677792, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Node3D/PLAYER"]
-transform = Transform3D(0.999162, 0.0157975, -0.0377569, 0, 0.922508, 0.385978, 0.0409285, -0.385655, 0.921735, 0.167635, 0.70704, -0.0495701)
-current = true
+[node name="playerHand" type="Marker3D" parent="Node3D/PLAYER"]
+transform = Transform3D(0.0175396, -0.999845, 0, 0.999845, 0.0175396, 0, 0, 0, 0.999999, 0.580644, 0.0238302, -0.462323)
 
 [node name="HAND" type="Node3D" parent="Node3D/PLAYER"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538217, -0.628031)
@@ -739,23 +741,32 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9
 
 [node name="Timer" type="Timer" parent="Node3D/COMPUTER"]
 
-[node name="cardDeck" type="Node3D" parent="Node3D"]
-transform = Transform3D(0.05, 0, 0, 0, 0.025, 0, 0, 0, 0.05, 0.338604, 1.49528, 0.173784)
+[node name="cardDeck" type="CharacterBody3D" parent="Node3D"]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0.262612, 1.49528, 0.230777)
 script = ExtResource("23_2im00")
 
 [node name="Cube" type="MeshInstance3D" parent="Node3D/cardDeck"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 0.8, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1on6k")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="Node3D/cardDeck" groups=["DECK"]]
+[node name="Area3D" type="Area3D" parent="Node3D/cardDeck" groups=["3"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/cardDeck/Area3D"]
 shape = SubResource("BoxShape3D_1naoy")
 
-[node name="SilahSistemi" type="Node3D" parent="Node3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/cardDeck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.835957, 0)
+shape = SubResource("BoxShape3D_hrvxu")
+
+[node name="SilahSistemi" type="CharacterBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308601, 1.59889, -0.0466524)
+collision_priority = 2.0
 script = ExtResource("21_higas")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Node3D/SilahSistemi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205248, -0.0185051, 0.260596)
+shape = SubResource("BoxShape3D_s0t2o")
 
 [node name="enemyLook" type="Marker3D" parent="Node3D/SilahSistemi"]
 transform = Transform3D(1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 0, 0, 1, 0, 0.448737, -1.3241)
@@ -772,9 +783,6 @@ transform = Transform3D(-6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0, 0.1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/SilahSistemi/RevolverArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205248, -0.0185051, 0.260596)
 shape = SubResource("BoxShape3D_s0t2o")
-
-[node name="mermi" parent="Node3D" instance=ExtResource("23_kcn8g")]
-transform = Transform3D(-2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0, 0.05, -0.222993, 1.5167, 0.385957)
 
 [node name="LIGHTS" type="Node3D" parent="Node3D"]
 

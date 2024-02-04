@@ -2,11 +2,11 @@ extends Node
 #################################################
 # GODOT SINGLEPLAYER VARIABLES
 #################################################
-var SPgunTurn = true
+var SPgunTurn = false
 var SPcardTurn = true
-var SPgunHandled = true
+var SPgunHandled = false
 enum  SP_GROUPS {ENEMY,REVOLVER,PLAYER,CARDDECK}
-
+################ 0 , 1 , 2 , 3 
 enum CARD_TYPES {SPIN, LOOK, X2SHOOT, SHOOTSELF, ROUNDPASS, STEALCARD, AGAIN}
 
 

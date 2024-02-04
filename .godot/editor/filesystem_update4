@@ -1,8 +1,7 @@
-res://default_env.tres
-res://clownRoulette/scenes/bullet_hole.tscn
 res://data/themes/button-theme.tres
 res://clownRoulette/assets/revolver/materyal/revhed.001.tres
 res://clownRoulette/assets/revolver/materyal/revbod.001.tres
 res://clownRoulette/assets/clown/HEAD.tres
+res://data/themes/panel-theme.tres
 res://clownRoulette/assets/shader/burn/new_shader.tres
 res://clownRoulette/assets/shader/outline/outline.gdshader
